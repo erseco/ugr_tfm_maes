@@ -6,3 +6,6 @@ services:
 
 before_install:
   - docker build -t erseco/ugr_tfm_maes .
+
+script:
+  - echo "TEST"
