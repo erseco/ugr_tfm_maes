@@ -5,7 +5,7 @@ Autocorrección interactiva para la enseñanza/aprendizaje de la programación
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![GitHub](https://img.shields.io/github/license/erseco/ugr_tfm_maes.svg)](https://github.com/erseco/ugr_tfm_maes/blob/master/LICENSE)
 [![GitHub](https://img.shields.io/github/forks/erseco/ugr_tfm_maes.svg)](https://github.com/erseco/ugr_tfm_maes/network)
-
+[![Build Status](https://travis-ci.com/erseco/ugr_tfm_maes.svg?branch=master)](https://travis-ci.com/erseco/ugr_tfm_maes)
 
 ## Abstract
 
