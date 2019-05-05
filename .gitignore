@@ -241,4 +241,7 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
-ugr_tfm_maes.sublime-project
+# sublime text stuff
+*.sublime-project
+*.sublime-workspace
+
