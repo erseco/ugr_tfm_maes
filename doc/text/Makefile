@@ -16,6 +16,7 @@ all: doc
 .PHONY: doc
 doc:
 	pdflatex -shell-escape -synctex=1 -interaction=nonstopmode project.tex || true
+	bibtex project.aux
 	pdflatex -shell-escape -synctex=1 -interaction=nonstopmode project.tex || true
 	mv project.pdf ../../
 	make clean

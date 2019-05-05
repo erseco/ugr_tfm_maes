@@ -241,6 +241,10 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
+__pycache__/
+*.py[cod]
+*$py.class
+
 # sublime text stuff
 *.sublime-project
 *.sublime-workspace

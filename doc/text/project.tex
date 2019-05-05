@@ -2,7 +2,7 @@
 % \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 
-\usepackage{cite} % para contraer referencias
+% \usepackage{cite} % para contraer referencias
 
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
@@ -18,14 +18,28 @@
 \usepackage{fancybox}
 
 
-% \usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+\usepackage[backend=bibtex,style=ieee]{biblatex}
 % \usepackage{biblatex}
 
 
 \usepackage[babel]{csquotes}
-\usepackage[backend=biber,style=apa]{biblatex}
-\DeclareLanguageMapping{spanish}{spanish-apa}
-\addbibresource{bibliography/project.bib}
+% \usepackage[backend=biber,style=apa]{biblatex}
+% \DeclareLanguageMapping{spanish}{spanish-apa}
+% \addbibresource{bibliography/project.bib}
+
+
+% %----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY AND INDEX
+%----------------------------------------------------------------------------------------
+
+% \usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+
+% \usepackage[style=numeric-comp,citestyle=ieee,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+
+\addbibresource{bibliography/project.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+
 
 
 \usepackage{textcomp}
@@ -53,9 +67,9 @@
 \newcommand{\universidad}{Universidad de Granada}
 \newcommand{\ciudad}{Granada}
 \newcommand{\vers}{Versión 0.1}
-\providecommand{\keywords}{educación, enseñanza, aprendizaje, programación, software libre}
+\providecommand{\keywords}{educación, enseñanza, aprendizaje, programación, integración continua, sistemas de control de versiones, software libre}
 
-\providecommand{\keywordsen}{education, teaching, learning, programming, free software}
+\providecommand{\keywordsen}{education, teaching, learning, programming, continuous integration, version control systems, free software}
 
 
 % Información archivo
@@ -267,6 +281,10 @@
 \begin{thebibliography}{99}
 	\input{back/bibliography}
 \end{thebibliography}
+
+
+
+
 
 % \bibliographystyle{unsrt}
 % \bibliography{project}
