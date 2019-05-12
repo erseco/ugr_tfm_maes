@@ -10,11 +10,11 @@ script:
 
 deploy:
   provider: releases
-  api_key: $GITHUB OAUTH TOKEN
-  file:
-    - project.pdf
+  api_key: $GITHUB_API_KEY
+  file: project.pdf
   skip_cleanup: true
   overwrite: true
   draft: true
-  # on:
-  #   tags: true
+  on:
+    repo: erseco/ugr_tfm_maes
+    # tags: true
