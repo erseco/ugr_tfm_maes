@@ -248,4 +248,4 @@ __pycache__/
 # sublime text stuff
 *.sublime-project
 *.sublime-workspace
-
+*.txt
