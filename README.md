@@ -24,10 +24,7 @@ Mediante el uso de sistemas de integración continua desarrollaremos un sistema 
 Memoria realizada con LaTeX, para generar el archivo PDF introducir las siguientes órdenes:
 
 ```
-cd doc
-sudo apt-get install texlive texlive-latex-extra texlive-lang-spanish xzdec
-tlmgr init-usertree
-tlmgr install xcolor
+sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-bibtex-extra biber
 make
 ```
 
