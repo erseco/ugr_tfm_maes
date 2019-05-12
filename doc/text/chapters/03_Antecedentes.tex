@@ -2,16 +2,37 @@
 
 En este capítulo vamos analizar el estado de arte actual y las tecnologías candidatas a utilizarse en este proyecto en base a los objetivos que presentamos en el capítulo anterior.
 
-\section {Procesos de verificación de código}
 
+\section {Temario relacionado con la programación}
+
+Tal y como indica el Decreto 110-2016. Las tecnologías de la información y de la comunicación para el aprendizaje y el conocimiento se
+utilizarán de manera habitual como herramientas integradas para el desarrollo del currículo.
+
+\subsection {Bachillerato}
+
+En la Orden de 14 de julio de 2016 se especifica el currículo de
+
+Según la legislación Tecnologías de la Información y de la Comunicación
+
+
+
+
+\subsection {Ciclo Formativo Grado Medio}
+
+
+\subsection {Ciclo Formativo Grado Superior}
+
+
+
+\section {Procesos de verificación de código}
 
 \subsection {Desarrollo guiado por pruebas (TDD)}
 
-El desarrollo guiado por pruebas de software, o Test-Driven Development (TDD) es una práctica de ingeniería de software que involucra otras dos prácticas: Escribir las pruebas primero (Test First Development) y Refactorización (Refactoring). Para escribir las pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En primer lugar, se escribe una prueba y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido.
+El desarrollo guiado por pruebas de software o Test-Driven Development (TDD) es una práctica de ingeniería de software que involucra otras dos prácticas: Escribir las pruebas primero (Test First Development) y Refactorización (Refactoring). Para escribir las pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En primer lugar, se escribe una prueba y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido.
 
 \subsection {Desarrollo guiado por comportamiento (BDD)}
 
-El desarrollo guiado por comportamiento, o Behavior-Driven Development (BDD) es una práctica de ingeniería de software que surgió a partir del desarrollo guiado por pruebas (TDD). El desarrollo guiado por el comportamiento combina las técnicas generales y los principios del TDD junto con ideas de análisis y diseño orientado a objetos para proveer al desarrollo de software y a los equipos de administración de herramientas compartidas y un proceso compartido de colaboración en el desarrollo de software.
+El desarrollo guiado por comportamiento o Behavior-Driven Development (BDD) es una práctica de ingeniería de software que surgió a partir del desarrollo guiado por pruebas (TDD). El desarrollo guiado por el comportamiento combina las técnicas generales y los principios del TDD junto con ideas de análisis y diseño orientado a objetos para proveer al desarrollo de software y a los equipos de administración de herramientas compartidas y un proceso compartido de colaboración en el desarrollo de software.
 
 
 \section {Herramientas de verificación de código}
@@ -20,11 +41,19 @@ El desarrollo guiado por comportamiento, o Behavior-Driven Development (BDD) es 
 
 pytest es un framework de test unitarios para el lenguaje de programación Python que facilita la creación de pruebas sencillas y escalables. Las pruebas son expresivas y legibles y no se requieren código adicional.
 
+\subsection {PEP8}
+
+PEP8 es una guía de estilo de codificación para Python definida por sus creadores y que se define como estándar.
+
 \subsection {RSpec}
 
 RSpec es una herramienta de tests BDD que sirve para probar código escrito en el lenguaje de programación Ruby. Se utiliza ampliamente en aplicaciones de producción. La idea básica detrás de este concepto es la de que las pruebas se escriben primero y el desarrollo se basa en escribir solo el código suficiente para cumplir con esas pruebas.
 
+\subsection {Tidy}
 
+HTML Tidy es una aplicación de consola que sirve para corregir código HTML no válido, detectar posibles errores de accesibilidad web y mejorar el diseño y el estilo de sangría del marcado resultante.
+
+HTML Tidy fue desarrollado en 2002 por Dave Raggett, miembro del World Wide Web Consortium (W3C)
 
 \section {Herramientas interactivas de corrección de código}
 
@@ -52,16 +81,7 @@ El proyecto Jupyter está licenciado bajo la BSD por lo que uso y distribución 
 \subsection {Turingscraft's CodeLab}
 
 http://www.turingscraft.com/
+(REFERENCIA A ARTICULO)
 
 
-\section {Sistemas de control de versiones}
 
-\subsection {GIT}
-
-\section {Sistemas de integración continua (CI)}
-
-\subsection {Travis-CI}
-
-\subsection {Circle}
-
-\subsection {BitBucket Pipelines}

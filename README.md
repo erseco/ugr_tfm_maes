@@ -9,13 +9,14 @@ Autocorrección interactiva para la enseñanza/aprendizaje de la programación
 
 ## Abstract
 
-[...]
+Una de las mejores formas de aprender programación es a través de ejemplos. A su vez, la labor de corrección de ejercicios es una tarea que consume mucho tiempo y que puede dar lugar a multitud de errores.
+Mediante el uso de sistemas de integración continua desarrollaremos un sistema de autocorrección de ejercicios de programación que asista a los profesores a la hora de corregir los mismos permitiendo al mismo tiempo que los alumnos puedan ver el resultado de dicha autocorrección para que les sirva como sistema de apoyo a su aprendizaje.
 
 ## Contenido
 
 - Memoria: [thesis](../blob/master/doc/)
 - Presentación: [https://gitpitch.com/erseco/ugr_tfm_maes](https://gitpitch.com/erseco/ugr_tfm_maes?t=night)
-- Codigo: [code](../blob/master/code/)
+- Ejercicios de ejemplo: [ugr_tfm_maes_sample_exercises](https://github.com/erseco/ugr_tfm_maes_sample_exercises)
 
 ### Autor: Ernesto Serrano Collado
 ### Tutora: Zoraida Callejas Carrión

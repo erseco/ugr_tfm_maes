@@ -1,0 +1,95 @@
+\chapter{Propuesta Técnica}
+
+En este capítulo vamos a definir y a detallar los procesos que vamos a seguir para solucionar el problema planteado en base a los objetivos que presentamos en el segundo capítulo ya los antecedentes vistos en el tercero.
+
+\section{Análisis general del problema}
+
+La enseñanza de la programación suele considerarse bastante complicada (referencia rubio).
+
+Aun así la programación es uno de los pilares mas importantes de la informática, por lo que su aprendizaje es de carácter obligatorio para todo el mundo. De hecho en muchos países como "" se está promoviendo su aprendizaje desde edades tempranas (referencia).
+
+\section{Herramientas necesarias}
+
+\subsection{Sistemas de control de versiones}
+
+Lo primero que necesitaremos es enseñar a nuestros alumnos a utilizar un sistema de control de versiones, aunque existen varios sistemas (SVN, Mercurial, CVS), hoy en día estándar de facto es Git que además es software libre.
+
+Para una administración más sencilla de nuestro código utilizaremos un cliente web como es GitHub, aunque existen otros como pueden ser GitLab o BitBucket.
+
+\subsubsection {Git}
+
+Git es un sistema de control de versiones distribuido para el seguimiento de los cambios en el código fuente durante el desarrollo de software. Está diseñado para coordinar el trabajo entre programadores, pero se puede utilizar para realizar un seguimiento de los cambios en cualquier conjunto de archivos.  Sus objetivos incluyen la velocidad, la integridad de los datos y la compatibilidad con flujos de trabajo distribuidos y no lineales.
+
+Git fue creado por Linus Torvalds en 2005 para el desarrollo del núcleo de Linux.
+
+Como con la mayoría de los sistemas de control de versiones distribuidos, y a diferencia de la mayoría de los sistemas cliente-servidor cada directorio de Git es un repositorio completo con un historial completo y capacidades de seguimiento de versiones completas, independiente del acceso a la red o a un servidor central.
+
+Git es software libre y de código abierto distribuido bajo los términos de la Licencia Pública General GNU versión 2.
+
+\subsubsection {GitHub}
+
+GitHub es un servicio de alojamiento basado en web para el control de versiones a través de Git. Se utiliza sobre todo para código fuente. Ofrece toda la funcionalidad de control de versiones distribuido y gestión de código fuente de Git, además de añadir sus propias características.
+
+Proporciona control de acceso y varias funciones de colaboración como seguimiento de errores, pull requests, gestión de tareas y wikis para cada proyecto.
+
+
+\section {Sistemas de integración continua (CI)}
+
+\subsubsection {Travis-CI}
+
+Travis CI es un servicio alojado de integración continua que se utiliza para construir y testear proyectos de software alojados en GitHub.
+
+Los proyectos de código abierto pueden ser probados de forma gratuita a través del sitio travis-ci.org. En cambio los proyectos privados deben pagar para poder ser ejecutados a través del sitio travis-ci.com.
+
+Gran parte del código fuente de Travis CI es software libre y está disponible en GitHub.
+
+\subsection{Lenguajes utilizados}
+
+Al igual que no existe una única solución a un problema, existen multitud de lenguajes de programación, nosotros nos vamos a centrar en solamente cuatro de ellos y vamos a explicar los motivos:
+
+\subsubsection{Python}
+
+Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Fue desarrollado por Guido van Rossum en 1991 y hoy en día es uno de los lenguajes de programación más utilizados en cursos de introducción a la programación ya que su sintaxis suele ser más sencilla, asemejándose al 'pseudocódigo".
+
+Según el (REFERNCIA A ESTUDIO STACKOVERFLOW) Python es uno de los lenguajes con mayor proyección de futuro y que del que mas se ha incrementado su uso, además (REFERENCIA A DJANGO-GIRLS), referencia a estudios
+
+Basándonos en las recomendaciones del Python Consortium (REFERENCIA A LA RECOMENDACIÓN DE LA PYTHON CONSORTIUM) vamos a centrar nuestros ejercicios en Python3 ya que no tiene sentido enseñar a nuestros alumnos Python2 pues además de desaconsejado, este lenguaje va a perder su soporte en un futuro muy cercano (REFERENCIA AL FIN DE SOPORTE DE PYTHON2).
+
+\subsubsection{Ruby}
+
+R
+
+\subsubsection{C++}
+
+\subsubsection{HTML}
+
+\section{Metodología de aprendizaje}
+
+\subsection{Aprendiendo a usar Git}
+
+\subsubsection{Introducción a Git}
+\subsubsection{Creando una cuenta en GitHub}
+\subsubsection{Creando nuestro primer repositorio}
+\subsubsection{Comandos básicos de Git}
+\subsubsection{Creando nuestro primer Fork}
+\subsubsection{Creando un Pull-Request}
+\subsubsection{Sistemas de integración continua (CI)}
+
+\subsection{Introducción a la programación}
+
+\subsubsection{Conceptos básicos de programación}
+\subsubsection{Nuestro primer "Hola Mundo"}
+\subsubsection{Guías de estilo}
+\subsubsection{Introducción al TDD}
+\subsubsection{Algunos ejercicios en diferentes lenguajes}
+
+En el repositorio \url{https://github.com/erseco/ugr_tfm_maes_sample_exercises} hemos definido una serie de ejercicios así como sus correcciones, pasamos a detallar los mismos.
+
+
+Escribe una función que encuentre el enésimo número primo. Para simplificar, asumimos que la entrada siempre será un entero (int). Si la entrada es menor o igual a 0, la función debe devolver -1.
+
+pasos a seguir para crear un ejercicio
+
+tiempos de creación de ejecución por el alumno
+
+Dichos ejercicios se han incorporado en la sección de Anexos

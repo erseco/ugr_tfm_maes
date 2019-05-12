@@ -17,14 +17,16 @@
 \usepackage[export]{adjustbox}
 \usepackage{fancybox}
 
+% \usepackage{biblatex-apa}
 
-\usepackage[backend=bibtex,style=ieee]{biblatex}
+\usepackage[backend=biber,style=apa]{biblatex}
+% \usepackage[style=numeric-comp,citestyle=apa,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
 % \usepackage{biblatex}
 
 
 \usepackage[babel]{csquotes}
 % \usepackage[backend=biber,style=apa]{biblatex}
-% \DeclareLanguageMapping{spanish}{spanish-apa}
+\DeclareLanguageMapping{spanish-apa}
 % \addbibresource{bibliography/project.bib}
 
 
@@ -227,6 +229,23 @@
 	    {ñ}{{\~{n}}}{1}
 }
 
+\lstdefinelanguage{yaml}{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{darkgray}\bfseries,
+  ndkeywords={},
+  ndkeywordstyle=\color{black}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  %moredelim=[l]{}{:},
+  comment=[l]{#},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{blue}\ttfamily,
+  %morestring=[l]{-}{},
+  morestring=[b]',
+  morestring=[b]"
+}
+
 % Para que las páginas en blanco no tengan cabecera
 \makeatletter
 \def\clearpage{%
@@ -265,8 +284,8 @@
 \input{chapters/01_Introduccion}
 \input{chapters/02_Objetivos}
 \input{chapters/03_Antecedentes}
-\input{chapters/04_Metodologia}
-\input{chapters/05_Resultados}
+\input{chapters/04_Propuesta_tecnica}
+\input{chapters/05_Propuesta_pedagogica}
 \input{chapters/06_Conclusiones}
 \input{chapters/07_Anexos}
 

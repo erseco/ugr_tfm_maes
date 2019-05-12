@@ -14,9 +14,9 @@ all: doc
 
 #Generación de PDF compilando el archivo LaTeX con pdflatex
 .PHONY: doc
-doc:
+doc: clean
 	pdflatex -shell-escape -synctex=1 -interaction=nonstopmode project.tex || true
-	bibtex project.aux
+	biber project
 	pdflatex -shell-escape -synctex=1 -interaction=nonstopmode project.tex || true
 	mv project.pdf ../../
 	make clean
@@ -30,4 +30,4 @@ spell:
 .PHONY: clean
 clean:
 	@echo "Limpiando..."
-	@rm -rf {*.aux,*.lof,*.log,*.lol,*.lot,*.out,*.synctex.gz,*toc}
+	@rm -rf {*.aux,*.lof,*.log,*.lol,*.lot,*.out,*.synctex.gz,*toc,*.run.xml,*.bbl,*.bcf,*.blg}

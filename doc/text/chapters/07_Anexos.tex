@@ -1,6 +1,69 @@
 \chapter{Anexos}
 
-\section{Codigo fuente}
+\section{Código fuente}
+
+\subsection{Pipeline para Travis-CI}
+
+\begin{lstlisting}[language=yaml]
+---
+dist: xenial
+
+before_install:
+  - pyenv global system 3.6.7
+  - sudo apt-get update
+  - sudo apt-get install -y tidy
+install:
+  - pip3 install pytest pycodestyle
+
+script:
+  - echo "Testing that we have all the requirements"
+  - python3 --version
+  - ruby --version
+  - gcc --version
+  - tidy --version
+
+  - pycodestyle homework_01/*.py
+  - pytest --verbose homework_01/*.py
+
+  - tidy -quiet -errors homework_04/*.html
+\end{lstlisting}
+
+\subsection{Ejercicios Python}
+\begin{lstlisting}[language=python]
+def add(x, y):
+    return x + y
+
+
+# Prueba la función con los valores (4, 5)
+# Resultado: 9 (True)
+def test_add():
+    assert add(4, 5) == 9
+\end{lstlisting}
+
+\begin{lstlisting}[language=python]
+import pytest
+
+
+def capital_case(x):
+    if not isinstance(x, str):
+        raise TypeError('Please provide a string argument')
+    return x.capitalize()
+
+
+def test_capital_case():
+    assert capital_case('semaphore') == 'Semaphore'
+
+
+def test_raises_exception_on_non_string_arguments():
+    with pytest.raises(TypeError):
+        capital_case(9)
+\end{lstlisting}
+
+\subsection{Ejercicios Ruby}
+
+\subsection{Ejercicios C++}
+
+\subsection{Ejercicios HTML}
 
 \begin{lstlisting}[language=html]
 <!DOCTYPE html>
@@ -16,30 +79,3 @@
 </html>
 \end{lstlisting}
 
-\begin{lstlisting}[language=yml]
-sudo: false
-language: cpp
-compiler:
-  - gcc
-  - clang
-os:
-  - linux
-
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-4.8
-    - g++-4.8
-    - clang
-
-before install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
-install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-script:
-  - mkdir build
-  - cd build
-  - cmake -DCMAKE_CXX_COMPILER=$COMPILER .. && make
-\end{lstlisting}
