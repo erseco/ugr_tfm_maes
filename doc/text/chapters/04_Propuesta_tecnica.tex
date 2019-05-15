@@ -85,18 +85,18 @@ Algunas de las herramientas necesarias para nuestro sistema de corrección requi
 
 \subsection{Aprendiendo a usar Git}
 
-Como ya explicamos anteriormente Git es uno de los sistemas de control de versiones más utilizados en la actualidad. Es dificil encontrar hoy en día una empresa que se dedique a la programación de forma profesional que no la utilice. A pesar de ello no forma parte del currículo de los ciclos formativos de informática. De hecho, salvo contadas excepciones, tampoco se aprende su uso en los Grados en Ingeniería Informática. De ahí la ventaja de nuestro sistema, ya que vamos a aprovechar para enseñarles a utilizar una herramienta que van a usar de forma exaustiva durante su futura carrera profesional.
+Como ya explicamos anteriormente Git es uno de los sistemas de control de versiones más utilizados en la actualidad. Es dificil encontrar hoy en día una empresa que se dedique a la programación de forma profesional que no la utilice. A pesar de ello no forma parte del currículo de los ciclos formativos de informática. De hecho, salvo contadas excepciones, tampoco se aprende su uso en los Grados en Ingeniería Informática. De ahí la ventaja de nuestro sistema, ya que vamos a aprovechar para enseñarles a utilizar una herramienta que van a usar de forma exhaustiva durante su futura carrera profesional.
 
 \bigskip
 Para aprender a utilizar Git nos vamos a basar en diversos manuales que enseñan a utilizarlo de una forma sencilla (\cite{popov_control_2012}) sin necesidad de tener conocimientos de programación.
 
 \subsubsection{Introducción a Git}
 
-El control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Aunque se usa de forma mayoritaria para código fuente cualquier tipo de archivo que encuentres en un ordenador puede ponerse bajo control de versiones.
+Un sistema de control de versiones es una herramienta que registra los cambios realizados sobre un conjunto de archivos a lo largo del tiempo, de modo que se pueden volver a un estado previo en cualquier momento. Aunque se usa de forma mayoritaria para código fuente  se pueden guardar versiones de cualquier tipo de archivo.
 
-Te permite revertir archivos a un estado anterior, revertir el proyecto entero a un estado anterior, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que puede estar causando un problema, quién introdujo un error y cuándo, y mucho más.
+Las principales características de un sistema de control de versiones son revertir archivos a un estado previo, revertir el proyecto entero a un estado anterior, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que puede estar causando un problema así como saber quién introdujo un error y cuándo.
 
-Un método de control de versiones usado por mucha gente es copiar los archivos a otro directorio (quizás indicando la fecha y hora en que lo hicieron, si son avispados). Este enfoque es muy común porque es muy simple, pero también tremendamente propenso a errores. Es fácil olvidar en qué directorio te encuentras, y guardar accidentalmente en el archivo equivocado o sobrescribir archivos que no querías.
+Un método de control de versiones usado por mucha gente es copiar los archivos a otro directorio (indicando la fecha y hora en que lo hicieron, si son avispados). Este enfoque es muy común porque es muy simple, pero también tremendamente propenso a errores. Es fácil olvidar en qué directorio te encuentras, y guardar accidentalmente en el archivo equivocado o sobrescribir archivos que no querías.
 
 En cambio Git es un sistema de control de versiones distribuido, los clientes no sólo descargan la última instantánea de los archivos: replican completamente el repositorio. Así, si un servidor muere, y estos sistemas estaban colaborando a través de él, cualquiera de los repositorios de los clientes puede copiarse en el servidor para restaurarlo (figura \ref{fig:dvcs}).
 
@@ -119,7 +119,30 @@ Para crear una cuenta en GitHUb debemos acceder a su página web \url{https://gi
 \end{figure}
 
 \subsubsection{Creando nuestro primer repositorio}
+
+Crear un repositorio en GitHub es muy intuitivo, solo tenemos que hacer clic en el botón New y rellenar los datos que nos solicita (figura \ref{fig:git2}). De igual forma podemos crear un repositorio de forma local en nuestro ordenador ejecutando el comando \texttt{git init}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/git2}
+\caption{Ventana de creación de repositorio en GitHub}
+\label{fig:git2}
+\end{figure}
+
 \subsubsection{Comandos básicos de Git}
+
+Aquí podemos ver algunos de los comandos más habituales de Git, se puede encontrar la referencia completa en su documentacion oficial en \url{https://git-scm.com/doc}.
+
+\begin{itemize}
+  \item \textbf{git clone}: Clona un repositorio
+  \item \textbf{git status}: Nos dice el estado de un repositorio
+  \item \textbf{git commit}: Nos permite guardar los cambios en una rama
+  \item \textbf{git checkout}: Nos permite cambiar de rama
+  \item \textbf{git branch}: Nos permite crear y listar ramas
+  \item \textbf{git push}: Permite enviar el código a un repositorio remoto
+  \item \textbf{git pull}: Permite obtener el código desde un repositorio remoto
+\end{itemize}
+
+
 \subsubsection{Creando nuestro primer Fork}
 \subsubsection{Creando un Pull-Request}
 \subsubsection{Sistemas de integración continua (CI)}
