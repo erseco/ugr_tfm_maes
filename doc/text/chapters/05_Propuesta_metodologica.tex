@@ -1,12 +1,6 @@
-\chapter{Propuesta Técnica}
+\chapter{Propuesta Metodológica}
 
-En este capítulo vamos a definir y a detallar los procesos que vamos a seguir para solucionar el problema planteado en base a los objetivos que presentamos en el segundo capítulo ya los antecedentes vistos en el tercero.
-
-\section{Análisis general del problema}
-
-La enseñanza de la programación suele considerarse bastante complicada (referencia rubio).
-
-Aun así la programación es uno de los pilares mas importantes de la informática, por lo que su aprendizaje es de carácter obligatorio para todo el mundo. De hecho en muchos países como "" se está promoviendo su aprendizaje desde edades tempranas (referencia).
+En este capítulo vamos a definir y a detallar los procesos que vamos a seguir para llevar a cabo la propuesta pedagógica definida en el capítulo anterior.
 
 \section{Herramientas necesarias}
 
@@ -49,7 +43,7 @@ Al igual que no existe una única solución a un problema, existen multitud de l
 
 \subsubsection{Python}
 
-Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Fue desarrollado por Guido van Rossum en 1991 y hoy en día es uno de los lenguajes de programación más utilizados en cursos de introducción a la programación ya que su sintaxis suele ser más sencilla, asemejándose al 'pseudocódigo".
+Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Fue desarrollado por Guido van Rossum en 1991 y hoy en día es uno de los lenguajes de programación más utilizados en cursos de introducción a la programación ya que su sintaxis suele ser más sencilla, asemejándose al ``pseudocódigo''.
 
 Según el (REFERNCIA A ESTUDIO STACKOVERFLOW) Python es uno de los lenguajes con mayor proyección de futuro y que del que mas se ha incrementado su uso, además (REFERENCIA A DJANGO-GIRLS), referencia a estudios
 
@@ -94,10 +88,13 @@ Para aprender a utilizar Git nos vamos a basar en diversos manuales que enseñan
 
 Un sistema de control de versiones es una herramienta que registra los cambios realizados sobre un conjunto de archivos a lo largo del tiempo, de modo que se pueden volver a un estado previo en cualquier momento. Aunque se usa de forma mayoritaria para código fuente  se pueden guardar versiones de cualquier tipo de archivo.
 
+\bigskip
 Las principales características de un sistema de control de versiones son revertir archivos a un estado previo, revertir el proyecto entero a un estado anterior, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que puede estar causando un problema así como saber quién introdujo un error y cuándo.
 
+\bigskip
 Un método de control de versiones usado por mucha gente es copiar los archivos a otro directorio (indicando la fecha y hora en que lo hicieron, si son avispados). Este enfoque es muy común porque es muy simple, pero también tremendamente propenso a errores. Es fácil olvidar en qué directorio te encuentras, y guardar accidentalmente en el archivo equivocado o sobrescribir archivos que no querías.
 
+\bigskip
 En cambio Git es un sistema de control de versiones distribuido, los clientes no sólo descargan la última instantánea de los archivos: replican completamente el repositorio. Así, si un servidor muere, y estos sistemas estaban colaborando a través de él, cualquiera de los repositorios de los clientes puede copiarse en el servidor para restaurarlo (figura \ref{fig:dvcs}).
 
 \begin{figure}[h!]
@@ -121,6 +118,7 @@ Para crear una cuenta en GitHUb debemos acceder a su página web \url{https://gi
 \subsubsection{Creando nuestro primer repositorio}
 
 Crear un repositorio en GitHub es muy intuitivo, solo tenemos que hacer clic en el botón New y rellenar los datos que nos solicita (figura \ref{fig:git2}). De igual forma podemos crear un repositorio de forma local en nuestro ordenador ejecutando el comando \texttt{git init}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\textwidth]{../images/git2}
@@ -145,8 +143,32 @@ Aquí podemos ver algunos de los comandos más habituales de Git, se puede encon
 
 \subsubsection{Creando nuestro primer Fork}
 
+Una bifurcación, o fork en inglés, es el término que se utiliza para indicar una ramificación de un trabajo. Básicamente significa que vamos a copiar un proyecto y crear uno nuevo haciéndole modificaciones. La capacidad de crear bifurcaciones de código de forma sencilla es una de las características que han ayudado a la plataforma GitHub llegar a ser el sitio de referencia para albergar proyectos de software libre.
+
+\bigskip
+Para crear un fork en GitHub de cualquier proyecto simplemente tenemos que hacer click en el botón situado a la derecha de cada proyecto (figura \ref{fig:git_fork}). Una cosa a tener en cuenta a la hora de hacer un Fork de un proyecto es la licencia bajo la que esté dicho código, el cual suele venir indicado en el fichero LICENSE, no todas las licencias permiten la libre distribución de proyectos derivados.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/git_fork}
+\caption{Detalle del botón de Fork en GitHub}
+\label{fig:git_fork}
+\end{figure}
 
 \subsubsection{Creando un Pull-Request}
+
+Las contribuciones a un repositorio de código fuente que utiliza un sistema de control de versiones distribuido se realizan comúnmente por medio de un ``pull request''. El colaborador solicita que el encargado del proyecto haga un ``pull'' con los cambios en el código fuente, de ahí el nombre. El mantenedor puede revisar el conjunto de cambios, discutir modificaciones potenciales o mezclar el código.
+
+Dependiendo del flujo de trabajo establecido el código puede ser probado antes de ser incluido en la versión oficial. Algunos proyectos ejecutan un conjunto de pruebas automatizadas en cada solicitud de extracción, utilizando una herramienta de integración continua como Travis CI, y el revisor verifica que cualquier código nuevo tenga la cobertura de pruebas adecuada.
+
+Para hacer un ``Pull request'' haremos clic en el botón ``New pull request'' y seleccionando que ramas queremos fusionar (figura \ref{fig:git_pr}).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/git_pr}
+\caption{Detalle de creación de un Pull Request en GitHub}
+\label{fig:git_pr}
+\end{figure}
 
 
 \subsubsection{Sistemas de integración continua (CI)}
@@ -154,7 +176,7 @@ Aquí podemos ver algunos de los comandos más habituales de Git, se puede encon
 \subsection{Introducción a la programación}
 
 \subsubsection{Conceptos básicos de programación}
-\subsubsection{Nuestro primer "Hola Mundo"}
+\subsubsection{Nuestro primer ``Hola Mundo''}
 \subsubsection{Guías de estilo}
 \subsubsection{Introducción al TDD}
 \subsubsection{Algunos ejercicios en diferentes lenguajes}

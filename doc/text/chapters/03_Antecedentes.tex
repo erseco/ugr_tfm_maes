@@ -3,51 +3,43 @@
 En este capítulo vamos analizar el estado de arte actual y las tecnologías candidatas a utilizarse en este proyecto en base a los objetivos que presentamos en el capítulo anterior.
 
 
-\section {Temario relacionado con la programación}
-
-Tal y como indica el Decreto 110-2016. Las tecnologías de la información y de la comunicación para el aprendizaje y el conocimiento se
-utilizarán de manera habitual como herramientas integradas para el desarrollo del currículo.
-
-\subsection {Bachillerato}
-
-En la Orden de 14 de julio de 2016 se especifica el currículo de
-
-Según la legislación Tecnologías de la Información y de la Comunicación
-
-
-
-
-\subsection {Ciclo Formativo Grado Medio}
-
-
-\subsection {Ciclo Formativo Grado Superior}
-
-
-
 \section {Procesos de verificación de código}
+
+Existen diferentes procesos para verificar el código, los más comunes son el ``Desarrollo guiado por pruebas (TDD)'' y el ``Desarrollo guiado por comportamiento (BDD)'', ambos procedimientos tienen como finalidad verificar que el código desarrollado se adecua a los requisitos. De los dos el mas sencillo de implementar es el guiado por pruebas (\textbf{TDD}) ya que el basado en comportamiento (\textbf{BDD}) requiere de mayor capacidad de abstracción. Por ello en nuestra metodología nos basaremos en \textbf{TDD}.
+
+\bigskip
+Aun así vamos a detallar en que se basa cada uno para entender las diferencias de ambos procesos:
 
 \subsection {Desarrollo guiado por pruebas (TDD)}
 
-El desarrollo guiado por pruebas de software o Test-Driven Development (TDD) es una práctica de ingeniería de software que involucra otras dos prácticas: Escribir las pruebas primero (Test First Development) y Refactorización (Refactoring). Para escribir las pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En primer lugar, se escribe una prueba y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido.
+El ``desarrollo guiado por pruebas de software'' o ``Test-Driven Development (TDD)'' es una práctica de programación que consiste en dos subtareas: Primero escribir las pruebas, o \textit{Test First Development} y después refactorizar, o \textit{Refactoring}. Las pruebas son test unitarios, o \textit{unit tests}. El procedimiento es sencillo, se escribe una prueba y se verifica que fallan ya que todavía no hemos escrito el código necesario para pasar la prueba. A continuación se escribe código que hace que la prueba se ejecute sin errores y por último se refactoriza el código escrito para mejorar su desempeño y/o legibilidad.
+
+\bigskip
+El propósito del desarrollo guiado por pruebas es lograr que nuestro código funcione y a la vez sea sencillo y legible. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido. Como se indica en Clean Code: `Writing clean code is what you must do in order to call yourself a profesional. There is no reasonable excuse for doing anything less than your best'' (\cite{martin_clean_2009}).
 
 \subsection {Desarrollo guiado por comportamiento (BDD)}
 
-El desarrollo guiado por comportamiento o Behavior-Driven Development (BDD) es una práctica de ingeniería de software que surgió a partir del desarrollo guiado por pruebas (TDD). El desarrollo guiado por el comportamiento combina las técnicas generales y los principios del TDD junto con ideas de análisis y diseño orientado a objetos para proveer al desarrollo de software y a los equipos de administración de herramientas compartidas y un proceso compartido de colaboración en el desarrollo de software.
+El ``desarrollo guiado por comportamiento'', o ``Behavior-Driven Development (BDD)'' es una práctica de programación que surgió a partir del \textfb{TDD}. Combina las técnicas generales y los principios del TDD junto con prácticas de análisis y diseño orientado a objetos para establecer herramientas que en teoría puedan utilizarse por equipos externos al de desarrollo para definir los test, sin implicar que ese equipo externo tenga conocimientos de programación. E e y un proceso compartido de colaboración en el desarrollo de software.
+
+\bigskip
+A pesar de su definición teórica, la capacidad de abstracción necesaria para escribir buenos test basados en el comportamiento hace que en la mayoría de casos se necesite de conocimientos avanzados de programación.
 
 
 \section {Herramientas de verificación de código}
 
+Las herramientas de verificación de código se utilizan para realizar los procesos anteriormente descritos, pasamos a enumerar las más comunes:
+
 \subsection {Pytest}
 
-pytest es un framework de test unitarios para el lenguaje de programación Python que facilita la creación de pruebas sencillas y escalables. Las pruebas son expresivas y legibles y no se requieren código adicional.
+Pytest es un framework de test unitarios para el lenguaje de programación Python que facilita la creación de pruebas sencillas y escalables. Las pruebas son expresivas y legibles y no se requieren código adicional.
 
 \subsection {PEP8}
 
-PEP8 es una guía de estilo de codificación para Python definida por sus creadores y que se define como estándar.
+PEP8 es una guía de estilo de codificación para Python definida por sus creadores y que está definida como el estilo estándar del lenguaje.
 
 \subsection {RSpec}
 
-RSpec es una herramienta de tests BDD que sirve para probar código escrito en el lenguaje de programación Ruby. Se utiliza ampliamente en aplicaciones de producción. La idea básica detrás de este concepto es la de que las pruebas se escriben primero y el desarrollo se basa en escribir solo el código suficiente para cumplir con esas pruebas.
+RSpec es una herramienta para realizar test BDD que sirve para probar código escrito en el lenguaje de programación Ruby. Se utiliza ampliamente en aplicaciones de producción. La idea básica detrás de este concepto es la de que las pruebas se escriben primero y el desarrollo se basa en escribir solo el código suficiente para cumplir con esas pruebas.
 
 \subsection {Tidy}
 
@@ -74,7 +66,7 @@ En los últimos tres años, más de 200,000 personas han usado Python Tutor para
 
 \subsection {Jupyter Notebooks}
 
-Jupyter Notebook (anteriormente IPython Notebooks) es un entorno basado en la web para la creación de documentos interactivos. El término "cuaderno" puede hacer referencia coloquialmente a muchas entidades diferentes, principalmente la aplicación web Jupyter, el servidor web Jupyter o el formato de documento Jupyter dependiendo del contexto. Un documento Jupyter Notebook es un documento JSON, siguiendo un esquema versionado, y conteniendo una lista ordenada de celdas de entrada/salida que pueden contener código, texto (usando Markdown), matemáticas, gráficos y medios enriquecidos, normalmente terminando con la extensión ".ipynb".
+Jupyter Notebook (anteriormente IPython Notebooks) es un entorno basado en la web para la creación de documentos interactivos. El término ``cuaderno'' puede hacer referencia coloquialmente a muchas entidades diferentes, principalmente la aplicación web Jupyter, el servidor web Jupyter o el formato de documento Jupyter dependiendo del contexto. Un documento Jupyter Notebook es un documento JSON, siguiendo un esquema versionado, y conteniendo una lista ordenada de celdas de entrada/salida que pueden contener código, texto (usando Markdown), matemáticas, gráficos y medios enriquecidos, normalmente terminando con la extensión ``.ipynb''.
 
 El proyecto Jupyter está licenciado bajo la BSD por lo que uso y distribución es gratuito, se puede obtener desde \url{https://jupyter.org}
 

@@ -10,10 +10,14 @@
 \bigskip
 \noindent{\textbf{Palabras clave}: \textit{\keywords}\\
 
-Una de las mejores formas de aprender programación es a través de ejemplos. A su vez, la labor de corrección de ejercicios es una tarea que consume mucho tiempo y que puede dar lugar a multitud de errores.
+Una de las mejores formas de aprender programación es a través de la realización de ejercicios pero la labor de corrección de dichos ejercicios es una tarea que consume mucho tiempo. El coste de la corrección manual de ejercicios tiene una correlación directa con número de actividades que podemos realizar con nuestros alumnos ya que a la hora de planificarlas hay que tener en cuenta el tiempo que nos va a llevar corregir dichas actividades.
 
 \bigskip
-Mediante el uso de sistemas de integración continua desarrollaremos un sistema de autocorrección de ejercicios de programación que asista a los profesores a la hora de corregir los mismos permitiendo al mismo tiempo que los alumnos puedan ver el resultado de dicha autocorrección para que les sirva como sistema de apoyo a su aprendizaje.
+Vamos a proponer una metodología de trabajo que mediante el uso de sistemas de integración continua permitirá la corrección automática de ejercicios de programación reduciendo así el tiempo de corrección manual. Además los alumnos podrán ver el resultado de dicha autocorrección sirviéndoles como sistema de apoyo a su aprendizaje.
+
+\bigskip
+Con herramientas y/o metodologías que nos faciliten dicha corrección podríamos proponer muchos más ejercicios e incluso generar material de extensión para alumnos con altas capacidades. Los alumnos que tengan necesidades especiales de apoyo educativo podrían hacer uso de los resultados de la corrección para entender donde fallan. Asimismo los propios alumnos pueden ayudarse mutuamente incentivando el trabajo en equipo.
+
 
 \newpage
 \begin{center}
@@ -28,10 +32,13 @@ Mediante el uso de sistemas de integración continua desarrollaremos un sistema 
 \bigskip
 \noindent{\textbf{Keywords}: \textit{\keywordsen}.\\
 
-One of the best ways to learn computer programming is through examples. Also, the task of correcting exercises is a time-consuming task that can lead to a multitude of errors.
+One of the best ways to learn computer programming is through exercises but the work of correcting such exercises is a time-consuming task. The cost of the manual correction of exercises has a direct correlation with the number of activities that we can carry out with our students, since when planning them we have to take into account the time it will take us to correct these activities.
 
 \bigskip
-Through the use of continuous integration systems we are going to develop a system of self-correction of programming exercises that assists teachers in correcting them while allowing students to see the result of this self-correction so that it serves as a support system for their learning.
+We are going to propose a working methodology that through the use of continuous integration systems will allow the automatic correction of programming exercises, thus reducing manual correction time. In addition, the students will be able to see the result of this self-correction, serving them as a support system for their learning.
+
+\bigskip
+With tools and/or methodologies that facilitate this correction we could propose many more exercises and even generate extension material for students with high capacities. Students with special needs for educational support could use the results of the correction to understand where they fail. Students can also help each others encouraging the work in teams.
 
 \bigskip
 There are many studies (\cite{benotti_effect_2018}) and blogs posts like \cite{noauthor_how_2019} that demostrates how  self-correction and automatic code review systems improve programming learning by allowing students to self-evaluate immediately without having to wait for the correction of the exercises. In this way the student can see the correction of the exercise when he is working on it.
@@ -43,20 +50,28 @@ With the classic methods of manual correction the student must wait for this cor
 \newpage
 \thispagestyle{empty}
 \
-\vspace{3cm}
+\vspace{10cm}
 
 \noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
 
-Yo, \textbf{\autor}, alumno de la titulación \textbf{\master} de la \textbf{\escuela\ de la \universidad}, autorizo la ubicación de la siguiente copia de mi Trabajo Fin de Máster (\textit{\titulo}) en la biblioteca del centro para que pueda ser consultada por las personas que lo deseen.
+% \section*{Declaración de Originalidad del TFM}
+
+Yo, \textbf{\autor}, alumno de la titulación \textbf{\master} de la \textbf{\escuela\ de la \universidad}, declaro que el presente Trabajo de Fin de Máster es original, no habiéndose utilizado fuentes sin ser citadas debidamente. De no cumplir con este compromiso, soy consciente de que, de acuerdo con la Normativa de Evaluación y de Calificación de los estudiantes de la Universidad de Granada de 20 de mayo de 2013, \textit{esto conllevará automáticamente la calificación numérica de cero [...] independientemente del resto de las calificaciones que el estudiante hubiera obtenido. Esta consecuencia debe entenderse sin perjuicio de las responsabilidades disciplinarias en las que pudieran incurrir los estudiantes que plagien.}
 
 \bigskip
-Además, este mismo trabajo está publicado bajo la licencia \textbf{Creative Commons Attribution-ShareAlike 4.0} \cite{CC}, dando permiso para copiarlo y redistribuirlo en cualquier medio o formato, también de adaptarlo de la forma que se quiera, pero todo esto siempre y cuando se reconozca la autoría y se distribuya con la misma licencia que el trabajo original. Todo el código fuente así como este documento en formato {\tt LaTeX} se puede encontrar en el siguiente repositorio de {\tt GitHub}: \url{https://github.com/erseco/ugr_tfm_maes}.
+Asimismo, autorizo la ubicación de la siguiente copia de mi Trabajo de Fin de Máster (\textit{\titulo}) en la biblioteca del centro para que pueda ser consultada por las personas que lo deseen.
 
-\vspace{4cm}
+\bigskip
+Además, este mismo trabajo está publicado bajo la licencia \textbf{Creative Commons Attribution-ShareAlike 4.0} \cite{CC}, dando permiso para copiarlo y redistribuirlo en cualquier medio o formato, también de adaptarlo de la forma que se quiera, pero todo esto siempre y cuando se reconozca la autoría y se distribuya con la misma licencia que el trabajo original. Todo el código fuente así como este documento en formato {\tt LaTeX} se puede encontrar en los siguientes repositorios de {\tt GitHub}: \url{https://github.com/erseco/ugr_tfm_maes} y \url{https://github.com/erseco/ugr_tfm_maes_sample_exercises}.
+
+\bigskip
+Y para que así conste firmo el presente documento.
+
+\vspace{3cm}
 
 \noindent Fdo: \autor
 
-\vspace{2cm}
+\vspace{3cm}
 
 \begin{flushright}
 \ciudad, a \today
@@ -65,7 +80,7 @@ Además, este mismo trabajo está publicado bajo la licencia \textbf{Creative Co
 \newpage
 \thispagestyle{empty}
 \
-\vspace{3cm}
+\vspace{2cm}
 
 \noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
 
@@ -93,7 +108,7 @@ Y para que conste, expide y firma el presente informe en \ciudad\ a \today.
 \vspace{3cm}
 
 %\begin{figure}[H]
-%\includegraphics[width=0.3\textwidth]{../../firmaJJ}
+%\includegraphics[width=0.3\textwidth]{../../firmaZoraida}
 %\end{figure}
 
 \noindent \textbf{\tutor}
@@ -106,4 +121,7 @@ Y para que conste, expide y firma el presente informe en \ciudad\ a \today.
 A Georgia, que algún día será mejor ingeniera que su tío.
 
 \bigskip
-Al ZX Spectrum 128K de mis hermanos, porque sin él no habría llegado hasta aquí.
+Al ZX Spectrum 128K +2A de mis hermanos, porque sin él no habría llegado hasta aquí.
+
+\bigskip
+A mi \textit{seño} Zoraida, por haber sido mi primera profesora en la carrera, por ponerme mi primera matrícula y por cerrar el círculo dirigiendo este TFM.
