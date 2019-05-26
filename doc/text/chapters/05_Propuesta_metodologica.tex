@@ -119,7 +119,7 @@ Para crear una cuenta en GitHUb debemos acceder a su página web \url{https://gi
 
 Crear un repositorio en GitHub es muy intuitivo, solo tenemos que hacer clic en el botón New y rellenar los datos que nos solicita (figura \ref{fig:git2}). De igual forma podemos crear un repositorio de forma local en nuestro ordenador ejecutando el comando \texttt{git init}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{../images/git2}
 \caption{Ventana de creación de repositorio en GitHub}
@@ -148,7 +148,7 @@ Una bifurcación, o fork en inglés, es el término que se utiliza para indicar 
 \bigskip
 Para crear un fork en GitHub de cualquier proyecto simplemente tenemos que hacer click en el botón situado a la derecha de cada proyecto (figura \ref{fig:git_fork}). Una cosa a tener en cuenta a la hora de hacer un Fork de un proyecto es la licencia bajo la que esté dicho código, el cual suele venir indicado en el fichero LICENSE, no todas las licencias permiten la libre distribución de proyectos derivados.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{../images/git_fork}
 \caption{Detalle del botón de Fork en GitHub}
@@ -163,7 +163,7 @@ Dependiendo del flujo de trabajo establecido el código puede ser probado antes 
 
 Para hacer un ``Pull request'' haremos clic en el botón ``New pull request'' y seleccionando que ramas queremos fusionar (figura \ref{fig:git_pr}).
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{../images/git_pr}
 \caption{Detalle de creación de un Pull Request en GitHub}
@@ -172,6 +172,20 @@ Para hacer un ``Pull request'' haremos clic en el botón ``New pull request'' y 
 
 
 \subsubsection{Sistemas de integración continua (CI)}
+
+Un sistema de integración continua suele consistir en una plataforma que ejecuta una serie de pasos con cada ``Push'' que realizamos a nuestro sistema de control de versiones. A esta serie de pasos se le suele denominar ``pipeline'' y suele contener pasos habituales como pueden ser la compilación, la ejecución de validaciones sintácticas y estilísticas de código (\textit{linter}) y la ejecución de los diferentes test para comprobar que efectivamente el código funciona.
+
+\bigskip
+Como ya hemos indicado, para nuestra metodología vamos a utilizar ``Travis CI'' aunque la forma de funcionar es muy similar en casi todas las plataformas. Para crear una cuenta en ``Travis CI'' iremos a la url \url{https://travis-ci.org} y haremos click en el botón ``Sign-Up'' (figura \ref{fig:travis_signup})).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/travis_signup}
+\caption{Detalle de creación de una cuenta en Travis CI}
+\label{fig:travis_signup}
+\end{figure}
+
+
 
 \subsection{Introducción a la programación}
 
