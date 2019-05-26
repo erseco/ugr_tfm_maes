@@ -12,6 +12,6 @@ deploy:
   file: project.pdf
   skip_cleanup: true
   overwrite: true
-  draft: true
   on:
     repo: erseco/ugr_tfm_maes
+    tags: true
