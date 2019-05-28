@@ -73,6 +73,27 @@ El lenguaje de marcas de hipertexto o HTML por sus siglas en inglés, es un leng
 \bigskip
 HTML no es un lenguaje de programación, es un lenguaje de marcado que sirve para definir documentos estandarizados.
 
+
+\section {Herramientas de verificación de código}
+
+Las herramientas de verificación de código se utilizan para verificar que el código está bien escrito, pueden comprobar la sintaxis, el estilo o ambas cosas. Pasamos a enumerar las más comunes:
+
+\subsection {Pytest}
+
+Pytest es un framework de test unitarios para el lenguaje de programación Python que facilita la creación de pruebas sencillas y escalables. Las pruebas son expresivas y legibles y no se requiere código adicional.
+
+\subsection {PEP8}
+
+PEP8 es una guía de estilo de codificación para Python definida por sus creadores y que está definida como el estilo estándar del lenguaje.
+
+\subsection {RSpec}
+
+RSpec es una herramienta para realizar test BDD que sirve para probar código escrito en el lenguaje de programación Ruby. Se utiliza ampliamente en aplicaciones de producción.
+
+\subsection {Tidy}
+
+HTML Tidy es una aplicación de consola que sirve para corregir código HTML no válido, detectar posibles errores de accesibilidad web y mejorar el diseño y el estilo de sangría del marcado resultante. Fue desarrollado en 2002 por Dave Raggett, miembro del World Wide Web Consortium (W3C).
+
 \section{Metodología de aprendizaje}
 
 Algunas de las herramientas necesarias para nuestro sistema de corrección requieren algo de formación previa, por lo que vamos a definir una metodología de aprendizaje para las mismas
@@ -194,10 +215,30 @@ Una vez tengamos nuestra cuenta tenemos que activar en cuales de nuestra lista d
 \label{fig:travis_enable}
 \end{figure}
 
+Una vez activado, con cada \texttt{git push} se ejecutará el ``pipeline'' definido en el fichero \texttt{.travis.yml}, en nuestro repositorio de ejemplo se puede obtener uno configurado para ejecutar los diferentes ejemplos realizados para mostrar el funcionamiento de la metodología.
+
 \subsection{Introducción a la programación}
 
+Una vez los alumnos han aprendido los comandos básicos de Git y se han dado de alta en GitHub es hora de enseñarles los comandos básicos
+
 \subsubsection{Conceptos básicos de programación}
+
+Todos los lenguajes de programación comparten algunos elementos básicos que funcionan y se usan de forma diferente en cada lenguaje, pero que cumplen el mismo objetivo. Esos elementos son:
+Tipos de datos
+Variables
+Control de flujo
+Ciclos
+Estructuras de datos
+Funciones
+
+
 \subsubsection{Nuestro primer ``Hola Mundo''}
+
+Un ``Hola mundo'' es un programa cuya única finalidad es escribir la frase ``Hola mundo!''. Este programa se usa como introducción en la mayoría de lenguajes de programación siendo el primer ejercicio típico, y se considera fundamental desde el punto de vista didáctico. Una implementación de dicho programa se puede encontrar para prácticamente todos los lenguajes de programación existentes.
+
+\bigskip
+En nuestra metodología animamos a los profesores a enseñar un primer ejemplo del lenguaje a impartir usando un ``Hola Mundo'' para que los alumnos se familiaricen con el lenguaje. En nuestros ejercicios de ejemplo vamos a incorporar el hola mundo como primer ejercicio de programación.
+
 \subsubsection{Guías de estilo}
 \subsubsection{Introducción al TDD}
 \subsubsection{Algunos ejercicios en diferentes lenguajes}
@@ -212,3 +253,12 @@ pasos a seguir para crear un ejercicio
 tiempos de creación de ejecución por el alumno
 
 Dichos ejercicios se han incorporado en la sección de Anexos
+
+
+\subsection{Usando la integración continua para aprender}
+
+Una vez hemos visto como usar Git y los conceptos básicos de programación vamos a ver algunos de los errores con los que se pueden encontrar los alumnos, como pueden usar el sistema de integración continua para detectarlos ellos mismos y como corregirlos.
+
+
+
+
