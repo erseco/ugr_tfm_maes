@@ -12,20 +12,18 @@ before_install:
   - pyenv global system 3.6.7
   - sudo apt-get update
   - sudo apt-get install -y tidy
-install:
-  - pip3 install pytest pycodestyle
-
 script:
   - echo "Testing that we have all the requirements"
   - python3 --version
   - ruby --version
   - gcc --version
   - tidy --version
-
-  - pycodestyle homework_01/*.py
-  - pytest --verbose homework_01/*.py
-
-  - tidy -quiet -errors homework_04/*.html
+  - pycodestyle homework_01_python/*.py
+  - pytest --verbose homework_01_python/*.py
+  - ruby homework_02_ruby/exercise_01.rb
+  - gcc -o exercise_01 homework_03_c/exercise_01.c
+  - ./exercise_01
+  - tidy -quiet -errors homework_04_html/*.html
 \end{lstlisting}
 
 \subsection{Ejercicios Python}
@@ -60,8 +58,20 @@ def test_raises_exception_on_non_string_arguments():
 \end{lstlisting}
 
 \subsection{Ejercicios Ruby}
+\begin{lstlisting}[language=ruby]
+puts "Hola Mundo"
+\end{lstlisting}
 
-\subsection{Ejercicios C++}
+\subsection{Ejercicios C}
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+
+int main(void)
+{
+    printf("¡Hola, mundo!\n");
+    return 0;
+}
+\end{lstlisting}
 
 \subsection{Ejercicios HTML}
 

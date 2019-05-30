@@ -5,17 +5,12 @@ La democratización de Internet ha hecho que hoy día, al igual que en otras mat
 \bigskip
 Aunque a efectos legales la labor de un profesor tenga un horario establecido (posiblemente de 8.00 a 15.00 horas), uno no deja de ser profesor, de hecho la mayoría de los profesores ejercen la profesión 24 horas al día, 7 días a la semana durante los 365 días del año. Dicha dedicación, que es en gran medida vocacional nos puede llegar a consumir gran parte de nuestro tiempo y por eso tenemos que apoyarnos en metodologías que agilicen nuestro trabajo. Imaginemos poder permitir a nuestros alumnos experimentar con los ejercicios y aprender por si mismos en un contexto donde no se penaliza el error todo ello sin requerir nuestra intervención directa. Puede sonar un poco utópico pero como dijo Richard Branson: ``If your dreams don’t scare you, they are too small''.
 
-% \bigskip
-% Con las herramientas adecuadas, haciendo uso de la automatización podemos adaptar la metodología ``Exponential Organizations'' (\cite{ismail_exponential_2014}) al mundo de la enseñanza. De hecho conceptos como el ``ExO Sprint'' de 10 semanas (\cite{ismail_exponential_2018}) se puede usar para optimizar nuestra forma de impartir clase.
-
 \bigskip
 Durante mis años de estudiante conocí a profesores que se limitaban a repetir año tras año la misma teoría, con unos ejercicios copiados de algún sitio de Internet sin tan siquiera plantearse que sus futuros alumnos también tendrían acceso a Internet y sabrían buscar la fuente original de dichos ejercicios, pero también tuve profesores a los que les gustaba \textit{cacharrear} con todo tipo de nuevas tecnologías para mejorar su labor docente y mantenerse actualizados. Estos últimos han sido los que me han motivado tanto a llegar a ser profesor como a intentar definir, dentro de mis posibilidades, una metodología para optimizar la enseñanza de la programación.
 
-
 \section{Motivación}
 
-Mi primer contacto con la informática fue a finales de los ochenta. Un buen día mi padre apareció en casa con una caja que contenía un rudimentario teclado negro con un arco-iris serigrafiado. Ese mismo teclado tenía una ranura para introducir cintas de casete como las que servían para escuchar música y tras esperar lo que ahora nos parecería una eternidad podíamos empezar a aporrear el teclado para llevar a Phantomas (figura \ref{fig:phantomas}) de pantalla en pantalla mientras íbamos esquivando enemigos y activando las palancas que abrirían la caja fuerte de la mansión que íbamos a robar.
-
+Mi primer contacto con la informática fue a finales de los ochenta. Un buen día mi padre apareció en casa con una caja que contenía un rudimentario teclado negro con un arco-iris pintado. A ese teclado le podías introducir cintas de casete como las que servían para escuchar música y tras esperar lo que ahora nos parecería una eternidad podíamos empezar a aporrear el teclado para llevar a Phantomas (figura \ref{fig:phantomas}) de pantalla en pantalla mientras íbamos esquivando enemigos y activando las palancas necesarias para abrir y desvalijar la caja fuerte de una mansión en el planeta Earth-Gamma.
 
 \begin{figure}[h!]
 \centering
@@ -40,11 +35,11 @@ Y de esta manera, sin siquiera saberlo, tuve mis primeros contactos con el auto-
 Pasaron los años, los sistemas se fueron haciendo mas complejos y me di cuenta de que cuantas más opciones tenían los dispositivos, más perezosos se volvían los usuarios. Mi vecino sin ir más lejos, por no aprender a ajustar su televisor tenía ``La 2'' en el canal 3 ¿era yo el único que encontraba eso chirriante? Quizá no, pero como he ido descubriendo hay diferentes tipos de personas, están los que pueden pasar meses alumbrando el pasillo con el teléfono móvil y los que crean un tutorial en YouTube para enseñar a cambiar una bombilla.
 
 \bigskip
-Y ese es el deber que tenemos como futuros profesores, ser capaces de transmitir ese conocimiento e intentar que nuestros alumnos no pasen meses a oscuras, que aprendan a silenciar el volumen del altavoz del módem y en el mejor de los casos que sepamos despertar en ellos la curiosidad para que sean ellos mismos los que auto-aprendan y descubran todas esas cosas futuras que aun siendo profesores tenemos por aprender.
+Y ese es el deber que tenemos como futuros profesores, ser capaces de transmitir ese conocimiento e intentar que nuestros alumnos no pasen meses a oscuras, que aprendan a silenciar el volumen del altavoz del módem y en el mejor de los casos que sepamos despertar en ellos la curiosidad para que sean ellos mismos los que auto-aprendan y descubran todas esas cosas futuras que aun siendo profesores tenemos por aprender. ``In the future, the defining metric for organizations won’t be ROI (Return on Investment), but ROL (Return on Learning)'' (\cite{ismail_exponential_2014}).
 
 \section{Análisis general del problema}
 
-La enseñanza de la programación suele considerarse bastante complicada, ``ya que muchos estudiantes encuentran bastantes dificultades cuando empiezan a programar'' (\cite{rubio_uso_2018}), de hecho ``la existencia de altas tasas de fracaso y la subsiguiente incapacidad de los estudiantes para escribir programas simples al final de una unidad de programación son solo dos de los problemas que inciden en las facultades de informática todo el mundo'' (\cite{bruce_contemporary_nodate}).
+La enseñanza de la programación suele considerarse bastante complicada, ``ya que muchos estudiantes encuentran bastantes dificultades cuando empiezan a programar'' (\cite{rubio_uso_2018}), de hecho ``la existencia de altas tasas de fracaso y la subsiguiente incapacidad de los estudiantes para escribir programas simples al final de una unidad de programación son solo dos de los problemas que inciden en las facultades de informática todo el mundo'' (\cite{bruce_contemporary_2002}).
 
 \bigskip
 Aun así la programación es uno de los pilares más importantes de la informática, por lo que su aprendizaje es de carácter obligatorio. De hecho en muchos países como Finlandia, Alemania y Estonia promueven el aprendizaje de programación desde la educación primaria, en nuestro país \textit{``el estudio de las CC en Educación Primaria y Secundaria se encuentra en su fase inicial y se ha empezado a introducir recientemente por lo que aún no ha sido adoptado por la mayoría de centros escolares. Como resultado, el número de niños y niñas que a día de hoy estudian ciencias de la computación es todavía una minoría''} (\cite{fecyt_educacion_2016}) pero se está promoviendo el aprendizaje a edades cada vez más tempranas.
@@ -52,6 +47,25 @@ Aun así la programación es uno de los pilares más importantes de la informát
 \bigskip
 Para enseñar programación a nuestros alumnos tenemos que tener en cuenta las dificultades que suponen la interacción ordenador/alumno y ``contar con una actitud receptiva a los problemas que les plantea a los alumnos la introducción de un lenguaje formal y su uso para programar y resolver problemas''(\cite{vitale_psycopedagogical_1990}).
 
+\bigskip
+La mejor manera de aprender a programar es, como en las matemáticas, haciendo muchos ejercicios. Hay artículos que afirman que la cantidad de ejercicios realizados por los estudiantes  está directamente relacionado con la calificación obtenida (\cite{qian_teachers_2019}). Por ese motivo en casi todos los cursos de programación se proponen una gran cantidad de ejercicios adicionales. Evidentemente corregir todos estos ejercicios es una tarea bastante tediosa para los profesores por lo que habitualmente se opta por indicar una serie de ejercicios como obligatorios y el resto dejarlos como opcionales para que el alumno obtenga mejor calificación. La utilidad de realizar ejercicios se puede entender con la siguiente frase: ``when you move from point A to point B, you can then see point C. But you can’t see point C from point A. Iteration/experimentation is the only way'' (\cite{ismail_exponential_2018}) o como diría Antonio Machado: ``Caminante no hay camino, se hace camino al andar''.
+
+\bigskip
+La dinámica habitual de mandar una serie de ejercicios y esperar a su entrega tiene también el riesgo de que los alumnos plagien los ejercicios de otros alumnos del mismo curso o de cursos anteriores.
+
+\bigskip
+También vemos en la entrega de ejercicios un sistema de ``caja negra'' ya que el alumno no siempre sabe si el ejercicio que ha entregado está bien hecho y debe esperar a la corrección del mismo por parte del profesor para saber si lo hizo bien o no, si a eso le añadimos que el profesor puede tardar días o incluso semanas en entregar la corrección tenemos a un alumno que cuando vaya a comprobar la corrección habrá perdido el ``contexto'' de donde estaba, como se dice en el mundo de las metodologías ágiles es mucho mas beneficioso conocer en que fallamos de manera temprana ``The sooner you realize that something is failing, the quicker you can fix it and the faster you will ultimately succeed. This would be the ultimate rule of thumb: When something is not working, change course. Fail Fast, Succeed Faster'' (\cite{godse_fail_2013}) .
+
+\bigskip
+El sistema habitual también nos impide sacar métricas de forma sencilla, con un sistema de corrección automática podemos saber el número de veces que un alumno ha intentado realizar un ejercicios, cuanto ha tardado en dar con la solución correcta e incluso el tiempo que ha invertido en cada ejercicio. Todas estas métricas pueden ser muy útiles a la hora de calificar ya que a veces la programación es difícil de corregir y nos limitamos a una corrección ``binaria'', es decir, funciona o no funciona.
+
+% \begin{itemize}
+%   \item Reducir la tediosa tarea de la corrección de ejercicios.
+%   \item Motivar la enseñanza y aprendizaje de la programación a través de ejemplos.
+%   \item Ver las ventajas de usar sistemas de control de versiones.
+%   \item Enseñar a nuestros alumnos como utilizar un sistema de control de versiones de forma correcta.
+%   \item Mostrar nuevas prácticas de programación como puede ser la integración continua.
+% \end{itemize}
 
 % No me cuadra tener una lista de objetivos aquí y otra en la sección 2 y encima que no sean los mismos... Mejor describe el problema en párrafos. Aprovecha para explicar por qué es necesario en programación que los estudiantes practiquen mucho, cómo el profesor no podrá nunca corregir todos los ejercicios que permitirían una práctica intensiva, que le uso de esta herramienta facilita al estudiante probar, ver en qué se equivoca, corregir y muy sucintamente qué beneficios aporta al profesor aparte del ahorro de tiempo... todo lo que justifique abordar el problema que abordas en tu TFM
 
@@ -59,9 +73,6 @@ Para enseñar programación a nuestros alumnos tenemos que tener en cuenta las d
 
 
 % Veo muy floja la descripción del problema, puedes contar muchas cosas más, cuenta también la forma en la que se enseña actualmente, los problemas que tiene, etc. Tienes que darle una buena vuelta. Llévate este apartado a la sección 1.2
-
-
-Este proyecto intentará abordar los siguientes objetivos:
 
 \section{Estructura del proyecto}
 

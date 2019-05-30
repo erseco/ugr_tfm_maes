@@ -3,17 +3,32 @@
 En este capítulo pasamos a detallar la ventaja pedagógica que se pretende obtener en en base a los objetivos que presentamos en el segundo capítulo y a los antecedentes vistos en el tercero.
 
 
-\section{Análisis de las soluciones existentes}
 
-Tras analizar las tres soluciones libres descritas en los antecedentes (Coderunner, Python Tutor y Jupyter Notebooks) hemos encontrado que las tres tienen el mismo problema. En todos los casos nuestros alumnos tienen que aprender a usar una herramienta concreta que posiblemente no vayan a volver a utilizar en su futuro profesional. Esto sería comparable a lo que didácticamente decimos que el alumno ``aprende a aprobar exámenes'' mas que aprender los contenidos de la asignatura. Por esto, nos gustaría proponer una metodología donde los alumnos usen herramientas que van a tener que usar en futuro profesional (o académico) como pueden ser un sistema de control de versiones así como sistemas de integración continua, o \textit{continuous integration (CI)}.
+\section{Análisis de las soluciones}
+
+% Primero tendrías que decir que la solución a todos los males comentados es tener una forma de integración continua y por qué, después decir qué alternativas hay
+
+Nos gustaría proponer una metodología donde los alumnos usen herramientas que van a tener que usar en futuro profesional (o académico) como pueden ser los sistemas de control de versiones y los sistemas de integración continua, o \textit{continuous integration (CI)}, hay que tener en cuenta que esta metodología está enfocada mayoritariamente a la Formación Profesional porque es la que más asignaturas relacionadas con la programación, como veremos mas adelante. Como la finalidad Formación Profesional es enseñar una profesión enseñarles a nuestros alumnos a usar estos sistemas les va a ser de gran ayuda a la hora de conseguir empleo.
+
+\bigskip
+Las tres soluciones libres descritas en los antecedentes (Coderunner, Python Tutor y Jupyter Notebooks) obligan a nuestros alumnos a aprender a usar una herramienta concreta que posiblemente no vayan a volver a utilizar jamás. Esto sería comparable a lo que didácticamente decimos de que el alumno ``aprende a aprobar exámenes'' mas que aprender los contenidos de la asignatura.
+
+\bigskip
+Por eso hemos optado por utilizar dos de las tecnologías más utilizadas para gestión de código fuente e integración continua como pueden ser GitHub y Travis CI. Además, ambas son de uso gratuito para proyectos de software libre, fomentando así su uso como se indica en la Orden de 21 de febrero de 2005, sobre disponibilidad pública de los programas informáticos de la Administración de la Junta de Andalucía y de sus Organismos Autónomos.
 
 \section {Temario relacionado con la programación informática}
 
 Tal y como indica el Decreto 110/2016  de 14 de junio, por el que se establece la ordenación y el currículo del Bachillerato en la Comunidad Autónoma de Andalucía las tecnologías de la información y de la comunicación para el aprendizaje y el conocimiento se utilizarán de manera habitual como herramientas integradas para el desarrollo del currículo. Asimismo en los currículos de las distintas ramas educativos donde podemos ejercer como profesores incluyen asignaturas relacionadas con la informática y de forma más específica con la programación informática.
 
+
 \bigskip
-Tecnologías de la Información y Comunicación es un término amplio que enfatiza la integración de la informática y las telecomunicaciones, y de sus componentes hardware y software, con el objetivo de garantizar a
-los usuarios el acceso, almacenamiento, transmisión y manipulación de información. Su adopción y generalización han provocado profundos cambios en todos los ámbitos de nuestra vida, incluyendo la educación, la sanidad, la democracia, la cultura y la economía, posibilitando la transformación de la Sociedad Industrial en la Sociedad del Conocimiento.
+Tecnologías de la Información y Comunicación es un término amplio que enfatiza la integración de la informática y las telecomunicaciones, y de sus componentes hardware y software, con el objetivo de garantizar a los usuarios el acceso, almacenamiento, transmisión y manipulación de información. Su adopción y generalización han provocado profundos cambios en todos los ámbitos de nuestra vida, incluyendo la educación, la sanidad, la democracia, la cultura y la economía, posibilitando la transformación de la Sociedad Industrial en la Sociedad del Conocimiento.
+
+\bigskip
+La oferta de asignaturas de informática es variopinta, pues en la Educación Secundaria y Bachillerato es muy básica pero muy específica en la Formación Profesional, por lo que es complejo tener una metodología que se adapte a todos los niveles. Asimismo, los temarios suelen ser bastante extensos incluyendo tanto contenido que es muy difícil abordar cada tema en profundidad. Aquí podemos ver una de las ventajas de nuestra propuesta ya que por un lado, el tiempo que ahorramos lo podemos invertir en impartir más contenidos y que podemos centrarnos en las partes donde fallan los alumnos al ver el histórico de sus errores.
+
+\bigskip
+A continuación vamos a enumerar las distintas asignaturas relacionadas con la informática que se pueden encontrar en los currículos de Educación Secundaria, Bachillerato y Formación Profesional, además indicaremos cuales son candidatos a utilizar nuestra metodología en base a sus contenidos.
 
 \subsection {Educación Secundaria Obligatoria (ESO)}
 
@@ -31,21 +46,23 @@ La Orden EDU/2187/2009, de. 3 de Julio establece el currículo del ciclo formati
 
 Existen tres ciclos formativos de grado superior del plan LOE relacionados con la informática, la Orden EDU/392/2010, de 20 de enero, por la que se establece el currículo del ciclo formativo de Grado Superior correspondiente al título de ``Técnico Superior en Administración de Sistemas Informáticos en Red'' describe las asignaturas ``Lenguajes de Marca y Sistemas de Gestión de Información'' y ``Gestión de Bases de Datos'' en las que nuestra metodología se puede aplicar para corregir los ejercicios ya que se enseñan los lenguajes HTML, SQL, Javascript, XML así como algunos subconjuntos de XML como son DTD y XSD. Los currículos del título de ``Técnico Superior en Desarrollo de Aplicaciones Web'' definido en la Orden EDU/2887/2010, de 2 de noviembre y el de ``Técnico Superior en Desarrollo de Aplicaciones Multiplataforma'' definido en la Orden EDU/2000/2010, de 13 de julio definen varias asignaturas, algunas comunes, como pueden ser ``Programación'', ``Bases de Datos'' y ``Lenguajes de marcas y sistemas de gestión de información'' y otras específicas de cada título como pueden ser ``Programación multimedia y dispositivos móviles'' o ``Desarrollo web en entorno cliente'' que están centradas en el aprendizaje de la programación informática y en los que si encajaría nuestra metodología.
 
-
 \subsection {Formación Profesional Básica}
 
 La Orden ECD/1030/2014, de 11 de junio define el ``Título Profesional Básico en Informática y Comunicaciones'' y la Orden ECD/1633/2014, de 11 de septiembre define el  ``Título Profesional Básico en Informática de Oficina'', siendo ambas titulaciones las únicas relacionadas con la informática de todas las que componen la formación profesional básica, pero al igual que con el ciclo formativo de Grado Medio ambos currículos carecen de temario específico de programación por lo que queda fuera del ámbito de este proyecto.
 
 
+% Sería interesante que después de esto destacases la complejidad de tener una metodología de trabajo que permita cubrir los diferentes niveles de complejidad y conceptos que los estudiantes deben aprender, y cómo afrontas ese reto. También puedes decir que la mayoría de temarios (especialmente el de bachillerato) están muy sobrecargados de contenidos lo que resta tiempo para hacer mucha variedad de ejercicios en clase, lo que apoya tu propuesta... En definitiva, que saques de toda esta descripción cosas en claro que apoyen tu visión
+
+
 \section{Encuesta de percepción}
 
-Se realizó una breve encuesta y se difundió entre algunos profesores de diferentes ámbitos con el fin de ver si nuestra hipótesis de que la corrección de ejercicios era la parte mas tediosa que realizaban como docentes.
+Se realizó una breve encuesta y se difundió entre algunos profesores de diferentes ámbitos con el fin de ver si nuestra hipótesis de que la corrección de ejercicios era la tarea más tediosa que realizaban como docentes.
 
 \bigskip
 Aprovechamos la encuesta para obtener también algunos datos interesantes sobre la forma de trabajar de los docentes, de cara a trabajos futuros. La encuesta se podía consultar en la siguiente dirección web: \url{https://forms.gle/xxSz6mQDjswo5B137}.
 
 \bigskip
-La encuesta estuvo activa desde el 19 hasta el 25 de Mayo de 2019 y se recopilaron un total de 47 respuestas. Puede parecer una población pequeña pero se compartió ``de boca a oreja'' indicando que por sólo lo compartieran con otros profesores a ser posible relacionados con la informática para no desvirtuar las respuestas.
+La encuesta estuvo activa desde el 19 hasta el 25 de Mayo de 2019 y se recopilaron un total de 47 respuestas. Es una población pequeña pero aun así es interesante por las características de la misma ya que la encuesta se compartió ``de boca a oreja'' indicando que sólo lo compartieran con otros profesores a ser posible relacionados con la informática para no desvirtuar las respuestas.
 
 
 \begin{enumerate}
@@ -96,7 +113,7 @@ Como podemos ver, la hipótesis de que corregir ejercicios resulta tedioso ha si
 
 \item \textbf{¿Elaboras tus propios ejercicios?}
 
-En esta pregunta queríamos saber si los profesores elaboran sus propios ejercicios. En mi experiencia como alumno así como en mi experiencia como docente en prácticas he visto exactamente lo que se ve reflejado en la encuesta, hay profesores que elaboran todo su material, los hay que lo hacen de forma regular pero no siempre, también los hay que los realizan de forma ocasional. Aquí me gustaría remarcar que la opción ``Nunca'' ha recibido muy pocos votos cuando en mi experiencia también hay una mucho docentes que utilizan el material de otros profesores en lugar del suyo propio.
+En esta pregunta queríamos saber si los profesores elaboran sus propios ejercicios. En mi experiencia como alumno así como en mi experiencia como docente en prácticas he visto exactamente lo que se ve reflejado en la encuesta, hay profesores que elaboran todo su material, los hay que lo hacen de forma regular pero no siempre, también los hay que los realizan de forma ocasional. Aquí me gustaría remarcar que la opción ``Nunca'' ha recibido muy pocos votos cuando en mi experiencia también hay docentes que utilizan el material de otros profesores en lugar del suyo propio.
 
 \begin{figure}[H]
 \centering
@@ -110,7 +127,7 @@ En esta pregunta queríamos saber si los profesores elaboran sus propios ejercic
 Esta pregunta era para ver la repercusión que tiene a nivel docente los conceptos del software libre y las licencias abiertas como la GPL y la ``Creative Commons'' \cite{comons_creative_2013} así como la WikiPedia y otros proyectos que abogan por la difusión libre y gratuita tanto de software como de todo tipo de contenidos culturales.
 
 \bigskip
-Por nuestra experiencia pensábamos que no iba a haber tan buena acogida del ``Si'' como ha habido, pero nos ha sorprendido gratamente que la gran mayoría de los profesores encuestados apoyen el compartir el material de apoyo. También es algo que se puede considerar normal ya que hoy en día es difícil hacer uso de recursos de terceros encontrados online para apoyar nuestras clases. De hecho en mi periodo como docente en prácticas me sirvió para ver que al contrario que en mi época de estudiante, donde usábamos el libro de texto, los docentes usan recursos como Kahoot!\footnote{Plataforma gratuita que permite la creación de cuestionarios de evaluación en forma de concurso.} o YouTube para hacer las clases mucho mas dinámicas.
+Por nuestra experiencia pensábamos que no iba a haber tan buena acogida del ``Sí'' como ha habido, pero nos ha sorprendido gratamente que la gran mayoría de los profesores encuestados apoyen el compartir el material. También es algo que se puede considerar normal ya que hoy en día es difícil hacer uso de recursos de terceros encontrados online para apoyar nuestras clases. De hecho en mi periodo como docente en prácticas me sirvió para ver que al contrario que en mi época de estudiante, donde usábamos el libro de texto, los docentes usan recursos como Kahoot!\footnote{Plataforma gratuita que permite la creación de cuestionarios de evaluación en forma de concurso.} o YouTube para hacer las clases mucho mas dinámicas.
 
 \begin{figure}[H]
 \centering
@@ -121,7 +138,7 @@ Por nuestra experiencia pensábamos que no iba a haber tan buena acogida del ``S
 
 \item \textbf{¿Sueles entregar correcciones de los ejercicios?}
 
-Esta pregunta está íntimamente relacionada con el propósito de este trabajo, queríamos saber si los profesores solían entregar los ejercicios corregidos, hay que tener en cuenta que para que dicha corrección tenga utilidad las correcciones se han de entregar de forma temprana, ya que es cuando el alumno aun está adquiriendo los conocimientos, de dieron las opciones ``Si'', ``No'' y ``Otra'', siendo esta última opción para que los profesores indicaran alguna opción distinta, a continuación se pega en bruto dichas opciones alternativas:
+Esta pregunta está íntimamente relacionada con el propósito de este trabajo, queríamos saber si los profesores solían entregar los ejercicios corregidos, hay que tener en cuenta que para que dicha corrección tenga utilidad las correcciones se han de entregar de forma temprana, ya que es cuando el alumno aun está adquiriendo los conocimientos, de dieron las opciones ``Sí'', ``No'' y ``Otra'', siendo esta última opción para que los profesores indicaran alguna opción distinta, a continuación se pega en bruto dichas opciones alternativas:
 
 \begin{itemize}
     \item Algunas veces
@@ -129,7 +146,7 @@ Esta pregunta está íntimamente relacionada con el propósito de este trabajo, 
     \item Sí o se corrigen en clase.
 \end{itemize}
 
-Nos pareció interesante la opción de la corrección en clase, pues no la habíamos tenido en cuenta, pensamos que es una forma muy didáctica de que el alumno vea donde ha fallado y hacer una corrección temprana, pero teniendo en cuenta que por norma general siempre hay una sensación de falta de tiempo para impartir el temario, así que quizá invertir tiempo en esta corrección puede hacer que lo perdamos para impartir nuevos contenidos.
+Nos pareció interesante la opción de la corrección en clase, pues no la habíamos tenido en cuenta, pensamos que es una forma muy didáctica de que el alumno vea dónde ha fallado y hacer una corrección temprana, pero teniendo en cuenta que por norma general siempre hay una sensación de falta de tiempo para impartir el temario, así que quizá invertir tiempo en esta corrección puede hacer que lo perdamos para impartir nuevos contenidos.
 
 \begin{figure}[H]
 \centering
@@ -155,9 +172,9 @@ La opción ``Mejoran la enseñanza al poder ver de manera más inmediata los res
 \begin{itemize}
     \item Ahorran tiempo a todos y mejoran la enseñanza. Se pueden hacer más ejercicios y practicar mucho es esencial en enseñanzas técnicas.
     \item Sirven para ver si los alumnos han adquirido los conocimientos.
-    \item Es otro tipo de herramienta de evaluación
-    \item No lo he probado
-    \item Son útiles en su justa medida
+    \item Es otro tipo de herramienta de evaluación.
+    \item No lo he probado.
+    \item Son útiles en su justa medida.
 \end{itemize}
 
 En estas respuestas vemos que en su mayoría también coinciden que los sistemas de corrección automática son muy útiles para mejorar la enseñanza, así que creemos que esta propuesta metodológica puede ser de gran ayuda a profesores.
@@ -189,30 +206,38 @@ Incorporamos a la encuesta un apartado para que los profesores aportaran sus sug
 
 \section{Definición de la metodología}
 
+% ok con que contrastas con el test, pero me falta lo que te comentaba antes que metieses en otras secciones: una discusión acerca de la naturaleza de los ejercicios, por qué es útil emplear una solución como la tuya, etc.
+
 Tras validar que nuestra propuesta efectivamente tiene un alto valor pedagógico y que encaja dentro de los contenidos de varias asignaturas de los currículos de educación secundaria pasamos a definir los objetivos, contenidos y competencias de nuestra metodología.
 
-\subsection{Objetivos}
-
-El objetivo de nuestra metodología es enseñar programación de una forma diferente, con ejercicios, autocorrección y con tecnologías que se usan en el día a día de cualquier informático que se dedique profesionalmente a ello.
+\bigskip
+El objetivo de nuestra metodología es enseñar programación de una forma diferente, con ejercicios, autocorrección y con tecnologías que se usan en el día a día de cualquier informático que se dedique profesionalmente a ello. La misma nos brinda muchas ventajas como puede ser ver un histórico de los envíos de un alumno, para saber donde falla o el tiempo que le ha dedicado a un ejercicio concreto, un simple vistazo al ``Travis'' de cada alumno nos da mucha información, y el poder seguir la traza es muy útil, también podemos ver el historial de ``commits'' de Git de forma rápida para ver la evolución del alumno. El código de colores de Travis CI también hace que corregir sea intuitivo, verde para correcto y rojo para incorrecto. En un momento dado podríamos detectar un posible plagio entre alumnos de forma rápida usando el mencionado historial.
 
 \bigskip
-Como indica el Decreto 110/2016  de 14 de junio el alumno debe ``conocer el funcionamiento de las nuevas tecnologías de la información y la comunicación, comprendiendo sus fundamentos y utilizándolas para el tratamiento de la información (buscar, almacenar, organizar, manipular, recuperar, presentar, publicar y compartir), así como para la elaboración de programas que resuelvan problemas tecnológicos''
+Como indica el Decreto 110/2016  de 14 de junio el alumno debe ``conocer el funcionamiento de las nuevas tecnologías de la información y la comunicación, comprendiendo sus fundamentos y utilizándolas para el tratamiento de la información (buscar, almacenar, organizar, manipular, recuperar, presentar, publicar y compartir), así como para la elaboración de programas que resuelvan problemas tecnológicos'' así que además de todo lo indicado anteriormente estamos ajustándonos a la normativa.
 
 
 \subsection{Contenidos}
 
-Los contenidos de nuestra metodología comprenderán dos partes. Una parte común a todas las asignaturas, que podrá obviarse o abreviarse si los alumnos ya tienen dichas competencias adquiridas ya sea por haberlo aprendido en otra asignatura o haberlo aprendido de forma autodidacta. Otra parte específica donde haciendo uso de lo aprendido en la parte común seguirán el temario indicado para la asignatura en cuestión.
+Los contenidos de nuestra metodología comprenderán dos partes. Una parte común a todas las asignaturas donde se enseñará a usar Git y algunos conceptos básicos de programación y otra específica donde haciendo uso de lo aprendido en la parte común se seguirá el temario de la asignatura en cuestión.
+
+% Eso de que la introducción a la programación se pueda poner o quitar es muy relativo, explícalo mejor
 
 \bigskip
 La parte común comprenderá los siguientes dos apartados que se definirán de modo mas extenso en la propuesta metodológica:
 
-\begin{enumerate}
-    \item Aprendiendo a usar Git
-    \item Introducción a la programación
-\end{enumerate}
+\begin{itemize}
+    \item Aprendiendo a usar Git: Comandos básicos, creación de una cuenta en GitHub, integración continua, realizar un fork del repositorio de ejercicios ...
+    \item Introducción a la programación: Conceptos comunes a todos los lenguajes como ``variable'' y ``constante'', condicionales y bucles,...
+\end{itemize}
 
+Esta parte común podrá resumirse o incluso obviarse si los alumnos ya conocen alguno de los dos conceptos básicos por haberlos aprendido en otra asignatura.
+
+\bigskip
 La parte específica se desarrollará en base a los contenidos de la asignatura a impartir, pero en la propuesta metodológica se definirán algunos ejercicios de ejemplo de diferentes asignaturas como pueden ser ``Lenguajes de marcas y sistemas de gestión de información'', ``Programación'' o ``Bases de Datos''.
 
+\bigskip
+Los ejercicios de la parte específica estarán siempre disponibles en su totalidad para que los alumnos puedan ir avanzando al ritmo que deseen. Cada ejercicio tendrá una breve explicación de lo que se requiere y una serie de test TDD que deberán pasar. Para la entrega de ejercicios el alumno deberá realizar un ``Pull request'' contra el repositorio del profesor lo cual dará el ejercicio por entregado.
 
 \subsection{Competencias}
 
@@ -238,6 +263,11 @@ Entrando en detalle, de nuestra metodología, podemos destacar y definir las sig
 
 \end{itemize}
 
+\section{Evaluación}
+
+Para la evaluación de los ejercicios nos basaremos en primer lugar en si han seguido los pasos indicados de forma correcta, realizando un ``Pull request'' e indicando lo realizado, luego comprobaremos si los ``pipelines'' han pasado de forma correcta y de forma adicional podemos entrar a valorar, como hemos mencionado anteriormente, el histórico de envíos a GitHub para ver si ha ido solucionando los problemas de forma adecuada y también valorando el tiempo dedicado. Esto no quiere decir que a mas tiempo mayor calificación, pero si que sirve para hacernos una idea del esfuerzo que ha invertido el alumno para solucionar los ejercicios. Esto no quiere decir que también se pueda realizar una corrección ``manual'' de los ejercicios si fuera necesario.
+
+% Falta mucho aquí acerca de la forma de trabajar: cómo plantear los ejercicios, cómo hacerlos con distintos objetivos y niveles, cómo se puede plantear la evaluación y calificación.... todo eso es parte de tu propuesta que puede ser un poco "independiente" de la propuesta tecnológica
 
 
 
