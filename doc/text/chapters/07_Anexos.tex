@@ -4,88 +4,1072 @@
 
 \subsection{Pipeline para Travis-CI}
 
-\begin{lstlisting}[language=yaml]
+\begin{lstlisting}[language=yaml,caption={.travis.yml},captionpos=b]
 ---
 dist: xenial
 
 before_install:
   - pyenv global system 3.6.7
   - sudo apt-get update
-  - sudo apt-get install -y tidy
+  - sudo apt-get install -y tidy cppcheck
+install:
+  - pip3 install pytest pycodestyle requests beautifulsoup4
+  - gem install rspec rubocop mdl
+
 script:
   - echo "Testing that we have all the requirements"
+  - mdl --version
   - python3 --version
   - ruby --version
   - gcc --version
   - tidy --version
+
+  - mdl homework_00_git/
+
   - pycodestyle homework_01_python/*.py
   - pytest --verbose homework_01_python/*.py
-  - ruby homework_02_ruby/exercise_01.rb
-  - gcc -o exercise_01 homework_03_c/exercise_01.c
-  - ./exercise_01
+
+  - rubocop homework_02_ruby
+  - rspec homework_02_ruby
+
+  - cppcheck --verbose --error-exitcode=2 homework_03_c/*.c
+  - make -C homework_03_c tests
+
   - tidy -quiet -errors homework_04_html/*.html
 \end{lstlisting}
 
+\subsection{Ejercicios Git/Markdown}
+\begin{lstlisting}[language=markdown,caption={exercise\_01.md},captionpos=b]
+# Hello world
+\end{lstlisting}
+
+\begin{lstlisting}[language=markdown,caption={exercise\_02.md},captionpos=b]
+#h1 Heading 8-)
+
+## h2 Heading
+
+### h3 Heading
+
+#### h4 Heading
+
+##### h5 Heading
+
+###### h6 Heading
+
+## Horizontal Rules
+
+___
+
+
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'
+
+## Emphasis
+
+Text **This is bold text**
+
+Text __This is bold text__
+
+Text *This is italic text*
+
+Text _This is italic text_
+
+Text ~~Strikethrough~~
+
+## Blockquotes
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+## Lists
+
+Unordered
+
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+- Very easy!
+
+## Code
+
+Block code "fences"
+
+```
+Sample text here...
+```
+
+## Tables
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed. |
+| engine | engine to be used for processing templates. |
+| ext    | extension to be used for dest files. |
+
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed. |
+| engine | engine to be used for processing templates. |
+| ext    | extension to be used for dest files. |
+
+## Links
+
+[link text](http://dev.nodeca.com)
+
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+
+Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+\end{lstlisting}
+
 \subsection{Ejercicios Python}
-\begin{lstlisting}[language=python]
+\begin{lstlisting}[language=python,caption={exercise\_1.py},captionpos=b]
+#!/usr/bin/env python3
+
+# Question:
+# Write a program that prints "Hello world!"
+#
+# Hints:
+# Use the python print() built-infunction
+
+
+print('Hola mundo!')
+\end{lstlisting}
+
+\begin{lstlisting}[language=python,caption={exercise\_2.py},captionpos=b]
+#!/usr/bin/env python3
+
+# Question:
+# Write a function called add() which can compute and returns the summ of two
+# given numbers.
+#
+# Suppose the following parameters are supplied to the program:
+# 8 8
+# Then, the output should be:
+# 16
+
+import sys
+
+
 def add(x, y):
     return x + y
 
 
-# Prueba la función con los valores (4, 5)
-# Resultado: 9 (True)
-def test_add():
+# ------- START TDD TESTS DEFINITION -----------
+def test_add_8_8():
+    assert add(8, 8) == 16
+
+
+def test_add_4_5():
     assert add(4, 5) == 9
+# ------- END TDD TESTS DEFINITION -------------
+
+
+# Program entrypoint
+if __name__ == "__main__":
+
+    if len(sys.argv) == 3:
+
+        number1 = int(sys.argv[1])
+        number2 = int(sys.argv[2])
+        result = add(number1, number2)
+        print(result)
+
+    else:
+        print("Usage: %s <number1> <number2>" % sys.argv[0])
 \end{lstlisting}
 
-\begin{lstlisting}[language=python]
-import pytest
+\begin{lstlisting}[language=python,caption={exercise\_3.py},captionpos=b]
+#!/usr/bin/env python3
+
+# Question:
+# Write a function called get_factorial() which can compute and returns the
+# factorial of a given number.
+#
+# Suppose the following parameter is supplied to the program:
+# 8
+# Then, the output should be:
+# 40320
+#
+# Hints:
+# You can't use the `math` module.
+
+import sys
 
 
-def capital_case(x):
-    if not isinstance(x, str):
-        raise TypeError('Please provide a string argument')
-    return x.capitalize()
+def get_factorial(number):
+    if number == 0:
+        return 1
+    return number * get_factorial(number - 1)
 
 
-def test_capital_case():
-    assert capital_case('semaphore') == 'Semaphore'
+# ------- START TDD TESTS DEFINITION -----------
+def test_get_factorial_8():
+    import math
+    assert math.factorial(8) == get_factorial(8)
 
 
-def test_raises_exception_on_non_string_arguments():
-    with pytest.raises(TypeError):
-        capital_case(9)
+def test_get_factorial_3():
+    import math
+    assert math.factorial(3) == get_factorial(3)
+
+
+def test_get_factorial_25():
+    import math
+    assert math.factorial(25) == get_factorial(25)
+# ------- END TDD TESTS DEFINITION -------------
+
+
+# Program entrypoint
+if __name__ == "__main__":
+
+    if len(sys.argv) == 2:
+        number = int(sys.argv[1])
+        result = get_factorial(number)
+        print(result)
+
+    else:
+        print("Usage: %s <number>" % sys.argv[0])
+\end{lstlisting}
+
+\begin{lstlisting}[language=python,caption={exercise\_4.py},captionpos=b]
+#!/usr/bin/env python3
+
+# Question:
+# Write a function that get the content of the <title> tag of a given url
+#
+# Suppose the following parameter is supplied to the program:
+# https://www.google.es
+# Then, the output should be:
+# Google
+#
+# Hints:
+# Use the requests module to read the web content
+# Use the BeautifulSoup to process the HTML
+
+import sys
+import requests
+from bs4 import BeautifulSoup
+
+
+def get_title(url):
+
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, features="html.parser")
+
+    return soup.title.contents[0]
+
+
+# ------- START TDD TESTS DEFINITION -----------
+def test_get_title_google():
+    url = "https://www.google.com/"
+    assert get_title(url) == "Google"
+
+
+def test_get_title_alhambra():
+    url = "http://www.alhambra-patronato.es/"
+    assert get_title(url) == "Patronato de la Alhambra y Generalife"
+
+
+def test_get_title_wikipedia():
+    url = "https://en.wikipedia.org/wiki/Main_Page"
+    assert get_title(url) == "Wikipedia, the free encyclopedia"
+# ------- END TDD TESTS DEFINITION -------------
+
+
+# Program entrypoint
+if __name__ == "__main__":
+
+    if len(sys.argv) == 2:
+        url = sys.argv[1]
+        result = get_title(url)
+        print(result)
+
+    else:
+        print("Usage: %s <url>" % sys.argv[0])
+\end{lstlisting}
+
+\begin{lstlisting}[language=python,caption={exercise\_5.py},captionpos=b]
+#!/usr/bin/env python3
+
+# Question:
+# Write a funciton that works like a "Rock-Paper-Scissors" game, remember the
+# rules:
+# - Rock beats scissors
+# - Scissors beats paper
+# - Paper beats rock
+#
+# The result should be:
+# - It's a tie!
+# - Rock wins!
+# - Scissors win!
+# - Paper wins!
+# - Invalid input!
+#
+# Suppose the following parameter is supplied to the program:
+# rock scissors
+# Then, the output should be:
+# Rock wins!
+
+
+def play_game(option1, option2):
+
+    if option1 == option2:
+        return("It's a tie!")
+    elif option1 == 'rock':
+        if option2 == 'scissors':
+            return("Rock wins!")
+        else:
+            return("Paper wins!")
+    elif option1 == 'scissors':
+        if option2 == 'paper':
+            return("Scissors win!")
+        else:
+            return("Rock wins!")
+    elif option1 == 'paper':
+        if option2 == 'rock':
+            return("Paper wins!")
+        else:
+            return("Scissors win!")
+    else:
+        return("Invalid input!")
+
+
+# ------- START TDD TESTS DEFINITION -----------
+def test_play_game_rock_scissors():
+    assert play_game("rock", "scissors") == "Rock wins!"
+
+
+def test_play_game_scissors_scissors():
+    assert play_game("scissors", "scissors") == "It's a tie!"
+
+
+def test_play_game_paper_rock():
+    assert play_game("paper", "rock") == "Paper wins!"
+
+
+def test_play_game_scissors_paper():
+    assert play_game("scissors", "paper") == "Scissors win!"
+
+
+def test_play_game_invalid_paper():
+    assert play_game("invalid", "paper") == "Invalid input!"
+# ------- END TDD TESTS DEFINITION -------------
+
+
+# Program entrypoint
+if __name__ == "__main__":
+
+    if len(sys.argv) == 3:
+
+        option1 = sys.argv[1]
+        option2 = sys.argv[2]
+        result = play_game(option1, option2)
+        print(result)
+
+    else:
+        print("Usage: %s <option1> <option2>" % sys.argv[0])
 \end{lstlisting}
 
 \subsection{Ejercicios Ruby}
-\begin{lstlisting}[language=ruby]
-puts "Hola Mundo"
+\begin{lstlisting}[language=ruby,caption={exercise\_1.rb},captionpos=b]
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Question:
+# Write a program that prints "Hello world!"
+#
+# Hints:
+# Use the ruby puts directive
+
+puts 'Hello world!'
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_2.rb},captionpos=b]
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Question:
+# Write a function called add() which can compute and returns the summ of two
+# given numbers.
+#
+# Suppose the following parameters are supplied to the program:
+# 8 8
+# Then, the output should be:
+# 16
+
+def add(number1, number2)
+  number1 + number2
+end
+
+# Program entrypoint
+if $PROGRAM_NAME == __FILE__
+  if ARGV.length == 2
+
+    number1 = ARGV[0].to_i
+    number2 = ARGV[1].to_i
+    result = add(number1, number2)
+    puts result
+  else
+    puts "Usage: #{$PROGRAM_NAME} <number1> <number2>"
+  end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_2\_spec.rb},captionpos=b]
+# frozen_string_literal: true
+
+require_relative '../exercise_2'
+
+# ------- START TDD TESTS DEFINITION -----------
+describe add(0, 0) do
+  it 'returns 16 when passed 8 8' do
+    expect(add(8, 8)).to eq 16
+  end
+
+  it 'returns 9 when passed 4 5' do
+    expect(add(4, 5)).to eq 9
+  end
+end
+# ------- END TDD TESTS DEFINITION -------------
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_3.rb},captionpos=b]
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Question
+# Write a function called get_factorial() which can compute and returns the
+# factorial of a given number.
+#
+# Suppose the following parameter is supplied to the program
+# 8
+# Then, the output should be
+# 40320
+#
+# Hints:
+# You can't use the `math` module.
+
+def get_factorial(number)
+  return 1 if number.zero?
+
+  number * get_factorial(number - 1)
+end
+
+# Program entrypoint
+if $PROGRAM_NAME == __FILE__
+
+  if ARGV.length == 1
+    number = ARGV[0].to_i
+    result = get_factorial(number)
+    puts result
+  else
+    puts "Usage: #{$PROGRAM_NAME} <number>"
+  end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_3\_spec.rb},captionpos=b]
+# frozen_string_literal: true
+
+require_relative '../exercise_3'
+
+# ------- START TDD TESTS DEFINITION -----------
+describe get_factorial(0) do
+  it 'returns 40320 when passed 8' do
+    expect(get_factorial(8)).to eq 40_320
+  end
+
+  it 'returns 6 when passed 3' do
+    expect(get_factorial(3)).to eq 6
+  end
+  it 'returns 15511210043330985984000000 when passed 3' do
+    expect(get_factorial(25)).to eq 15_511_210_043_330_985_984_000_000
+  end
+end
+# ------- END TDD TESTS DEFINITION -------------
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_4.rb},captionpos=b]
+#!/usr/bin/env ruby
+
+# Question:
+# Write a function that get the content of the <title> tag of a given url
+#
+# Suppose the following parameter is supplied to the program:
+# https://www.google.es
+# Then, the output should be:
+# Google
+#
+# Hints:
+# Use the open-uri module to read the web content
+# Use a regular expression to process the HTML
+require "open-uri"
+
+def get_title(url)
+    open(url) do |f|
+        str = f.read
+        str.scan(/<title>(.*?)<\/title>/)
+    end
+end
+
+# Program entrypoint
+if __FILE__ == $PROGRAM_NAME
+
+    if ARGV.length == 1
+        url = ARGV[0]
+        result = get_title(url)
+        puts result
+
+    else
+        puts "Usage: #{$PROGRAM_NAME} <url>"
+    end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_4\_spec.rb},captionpos=b]
+# frozen_string_literal: true
+
+require_relative '../exercise_4'
+
+# ------- START TDD TESTS DEFINITION -----------
+#  RSpec don't allow to connect to external websites, so we should mock the petition
+describe get_factorial(0) do
+    it 'returns "Google" when passed "https//www.google.com/"' do
+      expect(get_title('https//www.google.com/')).to eq 'Google'
+    end
+    it 'returns "Patronato de la Alhambra y Generalife" when passed "http//www.alhambra-patronato.es/"' do
+      expect(get_title('http//www.alhambra-patronato.es/')).to eq 'Patronato de la Alhambra y Generalife'
+    end
+    it 'returns "Wikipedia, the free encyclopedia" when passed "https//en.wikipedia.org/wiki/Main_Page"' do
+      expect(get_title('https//en.wikipedia.org/wiki/Main_Page')).to eq 'Wikipedia, the free encyclopedia'
+    end
+end
+# ------- END TDD TESTS DEFINITION -------------
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_5.rb},captionpos=b]
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Question:
+# Write a funciton that works like a "Rock-Paper-Scissors" game, remember the
+# rules:
+# - Rock beats scissors
+# - Scissors beats paper
+# - Paper beats rock
+#
+# The result should be:
+# - It's a tie!
+# - Rock wins!
+# - Scissors win!
+# - Paper wins!
+# - Invalid input!
+#
+# Suppose the following parameter is supplied to the program:
+# rock scissors
+# Then, the output should be:
+# Rock wins!
+
+def play_game(option1, option2)
+  if option1 == option2
+    "It's a tie!"
+  elsif option1 == 'rock'
+    if option2 == 'scissors'
+      'Rock wins!'
+    else
+      'Paper wins!'
+    end
+  elsif option1 == 'scissors'
+    if option2 == 'paper'
+      'Scissors win!'
+    else
+      'Rock wins!'
+    end
+  elsif option1 == 'paper'
+    if option2 == 'rock'
+      'Paper wins!'
+    else
+      'Scissors win!'
+    end
+  else
+    'Invalid input!'
+  end
+end
+
+# Program entrypoint
+if $PROGRAM_NAME == __FILE__
+
+  if ARGV.length == 2
+
+    option1 = ARGV[0]
+    option2 = ARGV[1]
+    result = play_game(option1, option2)
+    puts result
+
+  else
+    puts "Usage: #{$PROGRAM_NAME} <option1> <option2>"
+  end
+end
+\end{lstlisting}
+
+\begin{lstlisting}[language=ruby,caption={exercise\_5\_spec.rb},captionpos=b]
+# frozen_string_literal: true
+
+require_relative '../exercise_5'
+
+# ------- START TDD TESTS DEFINITION -----------
+describe play_game('', '') do
+  it 'returns "Rock wins!" when passed "rock" "scissors"' do
+    expect(play_game('rock', 'scissors')).to eq 'Rock wins!'
+  end
+
+  it 'returns "Its a tie!" when passed "scissors" "scissors"' do
+    expect(play_game('scissors', 'scissors')).to eq "It's a tie!"
+  end
+
+  it 'returns "Paper wins!" when passed "paper" "rock"' do
+    expect(play_game('paper', 'rock')).to eq 'Paper wins!'
+  end
+
+  it 'returns "Scissors win!" when passed ("scissors" "paper"' do
+    expect(play_game('scissors', 'paper')).to eq 'Scissors win!'
+  end
+
+  it 'returns "Invalid input!" when passed "invalid" "paper"' do
+    expect(play_game('invalid', 'paper')).to eq 'Invalid input!'
+  end
+end
+# ------- END TDD TESTS DEFINITION -------------
 \end{lstlisting}
 
 \subsection{Ejercicios C}
-\begin{lstlisting}[language=c]
+\begin{lstlisting}[language=c,caption={Makefile},captionpos=b]
+SRCS = $(wildcard *.c)
+PROGS = $(patsubst %.c,%,$(SRCS))
+
+all: $(PROGS)
+
+%: %.c
+  gcc $(CFLAGS) -o $@ $<
+
+tests: test_2 test_3 test_5 clean
+
+test_2:
+  @gcc $(CFLAGS) -Wl, -e_main_tests -o exercise_2 exercise_2.c
+  @./exercise_2
+
+test_3:
+  @gcc $(CFLAGS) -Wl, -e_main_tests -o exercise_3 exercise_3.c
+  @./exercise_3
+
+test_5:
+  @gcc $(CFLAGS) -Wl, -e_main_tests -o exercise_5 exercise_5.c
+  @./exercise_5
+
+clean:
+  @rm -f $(PROGS)
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={minunit.h},captionpos=b]
+ /* file: minunit.h */
+ #define mu_assert(message, test) do { if (!(test)) return message; } while (0)
+ #define mu_run_test(test) do { char *message = test(); tests_run++; \
+                                if (message) return message; } while (0)
+int tests_run;
+
+char * all_tests();
+
+// This function acts as entrypoint for TDD
+int main_tests(int argc, char **argv) {
+     char *result = all_tests();
+     if (result != 0) {
+         printf("%s\n", result);
+     }
+     else {
+         printf("ALL TESTS PASSED on %s\n", argv[0]);
+     }
+     printf("Tests run: %d\n", tests_run);
+
+     return result != 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={exercise\_1.c},captionpos=b]
+/*
+# Question:
+# Write a program that prints "Hello world!"
+#
+# Hints:
+# Use the c printf() built-infunction
+*/
+
 #include <stdio.h>
 
 int main(void)
 {
-    printf("¡Hola, mundo!\n");
+    printf("Hello world!\n");
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={exercise\_2.c},captionpos=b]
+/*
+# Question:
+# Write a function called add() which can compute and returns the summ of two
+# given numbers.
+#
+# Suppose the following parameters are supplied to the program:
+# 8 8
+# Then, the output should be:
+# 16
+*/
+
+#include <stdio.h> //printf, scanf
+#include <stdlib.h> //atoi, strtol
+#include "minunit.h"
+
+int add(int x, int y) {
+    return x + y;
+}
+
+// ------- START TDD TESTS DEFINITION -----------
+char * test_add_8_8(){
+    mu_assert("error", add(8, 8) == 16);
+    return 0;
+}
+
+char * test_add_4_5() {
+    mu_assert("error", add(4, 5) == 9);
+    return 0;
+}
+
+char * all_tests() {
+     mu_run_test(test_add_8_8);
+     mu_run_test(test_add_4_5);
+     return 0;
+ }
+// ------- END TDD TESTS DEFINITION -------------
+
+// Program entrypoint
+int main(int argc, char **argv)
+{
+
+    if (argc == 3) {
+
+        int number1 = atoi(argv[1]);
+        int number2 = atoi(argv[2]);
+        int result = add(number1, number2);
+        printf("%d\n", result);
+
+    } else {
+        printf("Usage: %s <number1> <number2>\n", argv[0]);
+    }
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={exercise\_3.c},captionpos=b]
+/*
+# Question:
+# Write a function called get_factorial() which can compute and returns the
+# factorial of a given number.
+#
+# Suppose the following parameter is supplied to the program:
+# 8
+# Then, the output should be:
+# 40320
+#
+# Hints:
+# You can't use the `math` module.
+*/
+
+#include <stdio.h> //printf, scanf
+#include <stdlib.h> //atoi, strtol
+#include "minunit.h"
+
+
+int get_factorial(int number) {
+    if (number == 0) {
+        return 1;
+    }
+    return number * get_factorial(number - 1);
+}
+
+// ------- START TDD TESTS DEFINITION -----------
+char * test_get_factorial_8(){
+    mu_assert("error", get_factorial(8) == 40320);
+    return 0;
+}
+
+char * test_get_factorial_3() {
+    mu_assert("error", get_factorial(3) == 6);
+    return 0;
+}
+
+char * test_get_factorial_10() {
+    mu_assert("error", get_factorial(10) == 3628800);
+    return 0;
+}
+
+char * all_tests() {
+     mu_run_test(test_get_factorial_8);
+     mu_run_test(test_get_factorial_3);
+     mu_run_test(test_get_factorial_10);
+     return 0;
+ }
+// ------- END TDD TESTS DEFINITION -------------
+
+// Program entrypoint
+int main(int argc, char **argv)
+{
+
+    if (argc == 2) {
+
+        int number = atoi(argv[1]);
+        int result = get_factorial(number);
+        printf("%d\n", result);
+
+    } else {
+        printf("Usage: %s <number>\n", argv[0]);
+    }
+
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={exercise\_5.c},captionpos=b]
+/*
+# Question:
+# Write a funciton that works like a "Rock-Paper-Scissors" game, remember the
+# rules:
+# - Rock beats scissors
+# - Scissors beats paper
+# - Paper beats rock
+#
+# The result should be:
+# - It's a tie!
+# - Rock wins!
+# - Scissors win!
+# - Paper wins!
+# - Invalid input!
+#
+# Suppose the following parameter is supplied to the program:
+# rock scissors
+# Then, the output should be:
+# Rock wins!
+*/
+
+#include <stdio.h> //printf, scanf
+#include <string.h>
+#include "minunit.h"
+
+int add(int x, int y) {
+    return x + y;
+}
+
+char * play_game(char * option1, char * option2) {
+
+    if (strcmp(option1, option2))
+    {
+        return("It's a tie!");
+    }
+    else if (strcmp(option1, "rock"))
+    {
+        if (strcmp(option2, "scissors"))
+        {
+            return("Rock wins!");
+        }
+        else
+        {
+            return("Paper wins!");
+        }
+    }
+    else if (strcmp(option1, "scissors"))
+    {
+        if (strcmp(option2, "paper"))
+        {
+            return("Scissors win!");
+        }
+        else
+        {
+            return("Rock wins!");
+        }
+    }
+    else if (strcmp(option1, "paper"))
+    {
+        if (strcmp(option2, "rock"))
+        {
+            return("Paper wins!");
+        }
+        else
+        {
+            return("Scissors win!");
+        }
+    }
+    else
+    {
+        return("Invalid input!");
+    }
+
+}
+
+// ------- START TDD TESTS DEFINITION -----------
+
+char * test_play_game_rock_scissors(){
+    mu_assert("error", strcmp(play_game("rock", "scissors"), "Rock wins!"));
+    return 0;
+}
+
+
+char * test_play_game_scissors_scissors(){
+    mu_assert("error", strcmp(play_game("scissors", "scissors"), "It's a tie!"));
+    return 0;
+}
+
+
+char * test_play_game_paper_rock(){
+    mu_assert("error", strcmp(play_game("paper", "rock"), "Paper wins!"));
+    return 0;
+}
+
+
+char * test_play_game_scissors_paper(){
+    mu_assert("error", strcmp(play_game("scissors", "paper"), "Scissors win!"));
+    return 0;
+}
+
+
+char * test_play_game_invalid_paper(){
+    mu_assert("error", strcmp(play_game("invalid", "paper"), "Invalid input!"));
+    return 0;
+}
+
+char * all_tests() {
+     mu_run_test(test_play_game_rock_scissors);
+     mu_run_test(test_play_game_scissors_scissors);
+     mu_run_test(test_play_game_paper_rock);
+     mu_run_test(test_play_game_scissors_paper);
+     mu_run_test(test_play_game_invalid_paper);
+
+     return 0;
+ }
+// ------- END TDD TESTS DEFINITION -------------
+
+// Program entrypoint
+int main(int argc, char **argv)
+{
+
+    if (argc == 3) {
+
+        char * option1 = argv[1];
+        char * option2 = argv[2];
+        char * result = play_game(option1, option2);
+        printf("%s\n", result);
+
+    } else {
+        printf("Usage: %s <option1> <option2>\n", argv[0]);
+    }
+
     return 0;
 }
 \end{lstlisting}
 
 \subsection{Ejercicios HTML}
 
-\begin{lstlisting}[language=html]
-<!DOCTYPE html>
-<html lang="es-ES">
-  <head>
-    <meta charset="utf-8">
-    <title>Ejemplo de 2 párrafos</title>
-  </head>
-  <body>
-    <p>Esto es un párrafo.</p>
-    <p>Esto es otro párrafo.</p>
-  </body>
+\begin{lstlisting}[language=html,caption={exercise\_1.html},captionpos=b]
+<!--
+Question:
+Write a program that prints "Hello world!"
+
+Hints:
+Put your text directly inside the <body> tag
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Hello World</title>
+</head>
+<body>
+  Hello world!
+</body>
 </html>
 \end{lstlisting}
 
+\begin{lstlisting}[language=html,caption={exercise\_2.html},captionpos=b]
+<!--
+Question:
+
+Create a simple page with a heading section and a paragraph
+-->
+<!DOCTYPE html>
+<head>
+    <title>exercise2</title>
+</head>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+</body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[language=html,caption={exercise\_3.html},captionpos=b]
+<!--
+Question:
+Create a html 4x4 html table and fill with data
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>March Bills</title>
+</head>
+
+<body>
+
+<h2>March Bills</h2>
+
+<table summary="March bills">
+    <tr>
+        <th></th>
+        <th>Price</th>
+        <th>Due Date</th>
+    </tr>
+
+    <tr>
+        <td>Phone</td>
+        <td>$50</td>
+        <td>March 1st</td>
+    </tr>
+
+    <tr>
+        <td>Car insurance</td>
+        <td>$100</td>
+        <td>March 5th</td>
+    </tr>
+
+    <tr>
+        <td>Internet</td>
+        <td>$70</td>
+        <td>March 10th</td>
+    </tr>
+</table>
+
+</body>
+</html>
+\end{lstlisting}
