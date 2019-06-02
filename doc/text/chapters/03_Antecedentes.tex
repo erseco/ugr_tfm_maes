@@ -5,21 +5,21 @@ En este capítulo vamos analizar el estado de arte actual y las tecnologías can
 
 \section {Procesos de verificación de código}
 
-Existen diferentes procesos para verificar el código, los más comunes son el ``Desarrollo guiado por pruebas (TDD)'' y el ``Desarrollo guiado por comportamiento (BDD)'', ambos procedimientos tienen como finalidad verificar que el código desarrollado se adecua a los requisitos. De los dos el mas sencillo de implementar es el guiado por pruebas (\textbf{TDD}) ya que el basado en comportamiento (\textbf{BDD}) requiere de mayor capacidad de abstracción. Por ello en nuestra metodología nos basaremos en \textbf{TDD}.
+Existen diferentes procesos para verificar el código, los más comunes son el desarrollo guiado por pruebas \texttt{TDD} y el desarrollo guiado por comportamiento \texttt{BDD}, ambos procedimientos tienen como finalidad verificar que el código desarrollado se adecua a los requisitos. De los dos el más sencillo de implementar es el guiado por pruebas ya que el basado en comportamiento requiere de mayor capacidad de abstracción. Por ello en nuestra metodología nos basaremos en TDD.
 
 \bigskip
 Aun así vamos a detallar en qué se basa cada uno para entender las diferencias de ambos procesos:
 
 \subsection {Desarrollo guiado por pruebas (TDD)}
 
-El ``desarrollo guiado por pruebas'', en inglés ``Test-Driven Development'' y abreviado como \textbf{TDD}, es una práctica de programación que consiste en dos subtareas: Primero escribir las pruebas, o \textit{Test First Development} y después refactorizar, o \textit{Refactoring}. Las pruebas son test unitarios, o \textit{unit tests}. El procedimiento es sencillo, se escribe una prueba y se verifica que fallan ya que todavía no hemos escrito el código necesario para pasar la prueba. A continuación se escribe código que hace que la prueba se ejecute sin errores y por último se refactoriza el código escrito para mejorar su desempeño y/o legibilidad.
+El desarrollo guiado por pruebas, en inglés \texttt{Test-Driven Development} y abreviado como \textbf{TDD}, es una práctica de programación que consiste en dos subtareas: Primero escribir las pruebas, o \textit{Test First Development} y después refactorizar, o \textit{Refactoring}. Las pruebas son test unitarios, o \textit{unit tests}. El procedimiento es sencillo, se escribe una prueba y se verifica que fallan ya que todavía no hemos escrito el código necesario para pasar la prueba. A continuación se escribe código que hace que la prueba se ejecute sin errores y por último se refactoriza el código escrito para mejorar su desempeño y/o legibilidad.
 
 \bigskip
-El propósito del desarrollo guiado por pruebas es lograr que nuestro código funcione y a la vez sea sencillo y legible. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido. Como se indica en Clean Code: \textit{``Writing clean code is what you must do in order to call yourself a profesional. There is no reasonable excuse for doing anything less than your best''} (\cite{martin_clean_2009}).
+El propósito del desarrollo guiado por pruebas es lograr que nuestro código funcione y a la vez sea sencillo y legible. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido. Como se indica en el estupendo libro Clean Code: \textit{``Writing clean code is what you must do in order to call yourself a profesional. There is no reasonable excuse for doing anything less than your best''} (\cite{martin_clean_2009}).
 
 \subsection {Desarrollo guiado por comportamiento (BDD)}
 
-El ``desarrollo guiado por comportamiento'', en inglés ``Behavior-Driven Development'' y abreviado como \textbf{BDD} es una práctica de programación que surgió a partir del \textfb{TDD}. Combina las técnicas generales y los principios del TDD junto con prácticas de análisis y diseño orientado a objetos para establecer herramientas que en teoría puedan utilizarse por equipos externos al de desarrollo para definir los test, sin implicar que ese equipo externo tenga conocimientos de programación.
+El desarrollo guiado por comportamiento, en inglés \texttt{Behavior-Driven Development} y abreviado como \textbf{BDD} es una práctica de programación que surgió a partir del \textfb{TDD}. Combina las técnicas generales y los principios del TDD junto con prácticas de análisis y diseño orientado a objetos para establecer herramientas que en teoría puedan utilizarse por equipos externos al de desarrollo para definir los test, sin implicar que ese equipo externo tenga conocimientos de programación.
 
 \bigskip
 A pesar de su definición teórica, la capacidad de abstracción necesaria para escribir buenos test basados en el comportamiento hace que en la mayoría de casos se necesiten conocimientos avanzados de programación.
@@ -30,21 +30,31 @@ Existen diversas herramientas de corrección de código que funcionan de forma i
 
 \subsection {Coderunner}
 
-CodeRunner es un plugin gratuito de código abierto para Moodle que permite ejecutar el código fuente escrito por los estudiantes en respuesta preguntas de programación en muchos lenguajes diferentes. Está pensado principalmente para su uso en cursos de programación informática aunque puede utilizarse para calificar cualquier pregunta cuya respuesta sea texto. Su funcionamiento es tal que a una pregunta concreta sobre programación el estudiante deben escribir el código fuente en respuesta. Tras ello el código pasa a ejecutarse y pueden ver los resultados inmediatamente. Los estudiantes pueden corregir su código y volver a enviarlo, normalmente a cambio de una pequeña penalización. Coderunner se puede obtener desde el sitio \url{https://coderunner.org.nz}
+CodeRunner es un plugin gratuito de código abierto para Moodle que permite ejecutar el código fuente escrito por los estudiantes en respuesta preguntas de programación en muchos lenguajes diferentes. Está pensado principalmente para su uso en cursos de programación informática aunque puede utilizarse para calificar cualquier pregunta cuya respuesta sea texto. Su funcionamiento es tal que a una pregunta concreta sobre programación el estudiante deben escribir el código fuente en respuesta. Tras ello el código pasa a ejecutarse y pueden ver los resultados inmediatamente. Los estudiantes pueden corregir su código y volver a enviarlo, normalmente a cambio de una pequeña penalización.
+
+\bigskip
+Coderunner se puede obtener desde el sitio \url{https://coderunner.org.nz}
 
 \subsection {Python Tutor}
 
 Python Tutor es una herramienta de visualización de programas basada en web para Python, ya que dicho lenguaje se está convirtiendo en un lenguaje popular para la enseñanza de cursos introductorios de programación. Con esta herramienta, los profesores y los alumnos pueden escribir programas de Python directamente en el navegador web (sin instalar ningún complemento), avanzar y retroceder a través de la ejecución para ver el estado de las estructuras de datos en tiempo de ejecución y compartir sus visualizaciones de programas en la web.
 
-\textit{``En los últimos tres años, más de 200,000 personas han usado Python Tutor para visualizar sus programas''} \cite{GuoSIGCSE2013}. Además, los instructores de más de una docena de universidades como UC Berkeley, MIT, la Universidad de Washington y la Universidad de Waterloo lo han utilizado en sus cursos de ciencias de la computación. Python Tutor es un software gratuito y de código abierto, se puede obtener desde \url{http://pythontutor.com}.
+\bigskip
+\textit{``En los últimos tres años, más de 200,000 personas han usado Python Tutor para visualizar sus programas''} (\cite{GuoSIGCSE2013}). Además, los instructores de más de una docena de universidades como UC Berkeley, MIT, la Universidad de Washington y la Universidad de Waterloo lo han utilizado en sus cursos de ciencias de la computación.
+
+\bigskip
+Python Tutor es un software gratuito y de código abierto, se puede obtener desde \url{http://pythontutor.com}.
 
 
 \subsection {Jupyter Notebooks}
 
-Jupyter Notebook (anteriormente IPython Notebooks) es un entorno basado en la web para la creación de documentos interactivos. El término ``cuaderno'' puede hacer referencia coloquialmente a muchas entidades diferentes, principalmente la aplicación web Jupyter, el servidor web Jupyter o el formato de documento Jupyter dependiendo del contexto. Un documento Jupyter Notebook es un documento JSON, siguiendo un esquema versionado, y conteniendo una lista ordenada de celdas de entrada/salida que pueden contener código, texto (usando Markdown), matemáticas, gráficos y medios enriquecidos, normalmente terminando con la extensión ``.ipynb''. El proyecto Jupyter está licenciado bajo la BSD por lo que uso y distribución es gratuito, se puede obtener desde \url{https://jupyter.org}
+Jupyter Notebook (anteriormente IPython Notebooks) es un entorno basado en la web para la creación de documentos interactivos. El término ``cuaderno'' puede hacer referencia coloquialmente a muchas entidades diferentes, principalmente la aplicación web Jupyter, el servidor web Jupyter o el formato de documento Jupyter dependiendo del contexto. Un documento Jupyter Notebook es un documento JSON, siguiendo un esquema versionado, y conteniendo una lista ordenada de celdas de entrada/salida que pueden contener código, texto (usando Markdown), matemáticas, gráficos y medios enriquecidos, normalmente terminando con la extensión \texttt{.ipynb}. El proyecto Jupyter está licenciado bajo la BSD por lo que uso y distribución es gratuito, se puede obtener desde \url{https://jupyter.org}
 
 \subsection {Turingscraft's CodeLab}
 
-Esta herramienta comercial es la única de la lista que no tiene una licencia libre, está desarrollada por la empresa Neoyorquina Turingcrafts y desde 2002 ha sido utilizada por más de trescientos mil estudiantes de 20 países distintos \cite{barr_using_2016}. Se puede obtener más información desde su web \url{http://www.turingscraft.com/}
+Esta herramienta comercial es la única de la lista que no tiene una licencia libre, está desarrollada por la empresa Neoyorquina Turingcrafts y desde 2002 ha sido utilizada por más de trescientos mil estudiantes de 20 países distintos (\cite{barr_using_2016}).
+
+\bigskip
+Se puede obtener más información desde su web \url{http://www.turingscraft.com/}
 
 
