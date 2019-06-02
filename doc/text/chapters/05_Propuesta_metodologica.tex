@@ -12,9 +12,9 @@ Para una administración más sencilla de nuestro código utilizaremos un client
 
 \subsubsection {Git}
 
-Git es un sistema de control de versiones distribuido para el seguimiento de los cambios en el código fuente durante el desarrollo de software. Está diseñado para coordinar el trabajo entre programadores, pero se puede utilizar para realizar un seguimiento de los cambios en cualquier conjunto de archivos.  Sus objetivos incluyen la velocidad, la integridad de los datos y la compatibilidad con flujos de trabajo distribuidos y no lineales.
+Git es un sistema de control de versiones distribuido que nos ayuda a llevar un seguimiento de los cambios en el código mientras desarrollamos. Se diseñó para su uso con código fuente pero se puede utilizar para llevar el seguimiento de los cambios en cualquier conjunto de archivos. Sus características incluyen la velocidad, la integridad de los datos y la compatibilidad con flujos de trabajo distribuidos y no lineales.
 
-Git fue creado por Linus Torvalds en 2005 para el desarrollo del núcleo de Linux.
+Git fue creado por Linus Torvalds en 2005 para el desarrollo del núcleo de Linux como alternativa al software BitKeeper que era un sistema de control de versiones propietario tras cambios en la licencia de este último.
 
 Como con la mayoría de los sistemas de control de versiones distribuidos, y a diferencia de la mayoría de los sistemas cliente-servidor cada directorio de Git es un repositorio completo con un historial completo y capacidades de seguimiento de versiones completas, independiente del acceso a la red o a un servidor central.
 
@@ -22,9 +22,9 @@ Git es software libre y de código abierto distribuido bajo los términos de la 
 
 \subsubsection {GitHub}
 
-GitHub es un servicio de alojamiento basado en web para el control de versiones a través de Git, fue adquirido por MicroSoft en 2018. Se utiliza sobre todo para código fuente. Ofrece toda la funcionalidad de control de versiones distribuido y gestión de código fuente de Git, además de añadir sus propias características.
+GitHub es un servicio de alojamiento basado en web para el control de versiones a través de Git, fue adquirido por MicroSoft en 2018. Se utiliza sobre todo para código fuente aunque se puede utilizar para almacenar todo tipo de contenidos, incluso libros. Ofrece toda la funcionalidad de control de versiones distribuido y gestión de código fuente de Git, además de añadir sus propias características.
 
-Proporciona control de acceso y varias funciones de colaboración como seguimiento de errores, pull requests, gestión de tareas y wikis para cada proyecto. Además cuenta con un sub-proyecto llamado GitHub Education que es ampliamente utilizado como herramientas para la formación de programadores (\cite{hernandez_integracion_2018}).
+Proporciona control de acceso y varias funciones de colaboración como seguimiento de errores, \textit{pull requests}, gestión de tareas y \textit{wikis} para cada proyecto. Además cuenta con un sub-proyecto llamado GitHub Education que es ampliamente utilizado como herramientas para la formación de programadores (\cite{hernandez_integracion_2018}).
 
 
 \section {Sistemas de integración continua (CI)}
@@ -33,25 +33,26 @@ Proporciona control de acceso y varias funciones de colaboración como seguimien
 
 Travis CI es un servicio alojado de integración continua que se utiliza para construir y testear proyectos de software alojados en GitHub.
 
-Los proyectos de código abierto pueden ser probados de forma gratuita a través del sitio travis-ci.org. En cambio los proyectos privados deben pagar para poder ser ejecutados a través del sitio travis-ci.com.
+Los proyectos de código abierto pueden ser probados de forma gratuita a través del sitio \url{https://travis-ci.org}. En cambio los proyectos privados deben pagar para poder ser ejecutados a través del sitio \url{https://travis-ci.com}.
 
-Gran parte del código fuente de Travis CI es software libre y está disponible en GitHub.
+Gran parte de su código fuente es software libre y está disponible en GitHub.
 
 \subsection{Lenguajes utilizados}
 
-Al igual que no existe una única solución a un problema, existen multitud de lenguajes de programación, nosotros nos vamos a centrar en solamente cuatro de ellos y vamos a explicar los motivos:
+Al igual que no existe una única solución a un problema, existen multitud de lenguajes de programación, nosotros nos vamos a centrar en solamente cuatro de ellos ya que son los que cumplen con los contenidos de la mayoría de las asignaturas sobre informática, dichos lenguajes son Python, Ruby, C y HTML, aun así esta metodología es aplicable a otros lenguajes por lo que se podría utilizar para enseñar Java, Go, Haskell o Javascript:
 
 \subsubsection{Python}
 
-Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Fue desarrollado por Guido van Rossum en 1991 y hoy en día es uno de los lenguajes de programación más utilizados en cursos de introducción a la programación ya que su sintaxis suele ser más sencilla, asemejándose al ``pseudocódigo''.
+Python es un lenguaje de programación interpretado desarrollado por Guido van Rossum en 1991 cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Hoy en día es uno de los lenguajes de programación más utilizados en cursos de introducción a la programación ya que su sintaxis suele ser más sencilla, asemejándose al ``pseudocódigo''.
 
-Según el (REFERNCIA A ESTUDIO STACKOVERFLOW) Python es uno de los lenguajes con mayor proyección de futuro y que del que mas se ha incrementado su uso, además (REFERENCIA A DJANGO-GIRLS), referencia a estudios
+Según diversos índices (\cite{TIOBE2019}) y encuestas (\cite{stack_overflow_stack_2019}) Python es uno de los lenguajes con mayor proyección de futuro y que del que mas se ha incrementado su uso, sobre todo motivado por su sencillez a la hora de aprenderlo y a su potencia como lenguaje de análisis de datos habiendo prácticamente desbancando al lenguaje estadístico R.
 
-Basándonos en las recomendaciones del Python Consortium (REFERENCIA A LA RECOMENDACIÓN DE LA PYTHON CONSORTIUM) vamos a centrar nuestros ejercicios en Python3 ya que no tiene sentido enseñar a nuestros alumnos Python2 pues además de desaconsejado, este lenguaje va a perder su soporte en un futuro muy cercano (REFERENCIA AL FIN DE SOPORTE DE PYTHON2).
+\bigskip
+Vamos a centrar nuestros ejercicios en la versión 3 de Python ya que la versión 2 actualmente solo recibe actualizaciones de seguridad y en enero de 2020 dejará de estar oficialmente soportada (\cite{python.org_pep_2018}).
 
 \subsubsection{Ruby}
 
-Ruby es un lenguaje de programación creado por el programador japonés Yukihiro Matsumoto en 1995. Es un lenguaje fuertemente orientado objetos ya que todos los tipos de dato son a su vez un objeto.
+Ruby es un lenguaje de programación orientado a objetos creado por el programador japonés Yukihiro Matsumoto en 1995. Su orientación a objetos es denominada ``fuerte'' ya que todos los tipos de dato son a su vez un objeto.
 
 \bigskip
 Ruby empezó a ganar popularidad tras la publicación del framework de aplicaciones web Ruby On Rails (RoR) por parte de David Heinemeier Hansson en 2005 ya que el mismo simplificaba muchísimo el desarrollo siguiendo el patrón Modelo Vista Controlador (MVC).
@@ -73,34 +74,47 @@ El lenguaje de marcas de hipertexto o HTML por sus siglas en inglés, es un leng
 \bigskip
 HTML no es un lenguaje de programación, es un lenguaje de marcado que sirve para definir documentos estandarizados.
 
+\section {Herramientas de análisis de código}
 
-\section {Herramientas de validacion de código}
+También conocidos como ``linters''  son herramientas que analizan el código fuente para marcar errores de programación, \textit{bugs}, errores estilísticos y código sospechosos. Algunos son capaces incluso de calcular la complejidad ciclomática\footnote{Valor escalar que mide la complejidad lógica de un programa.} de un algoritmo. El término proviene de una antigua utilidad de Unix para análisis de código fuente en lenguaje C llamada ``lint''.
 
-Son conocidos como ``linters'' y
+\bigskip
+Existen \textit{linters} para prácticamente todos los lenguajes de programación, en nuestros ejemplos hemos utilizado los siguientes:
 
-\subsection{rubocop}
+\subsection {Pycodestyle}
 
-Tiene opciones interesantes como validar la complejidad ciclomática\footnote{Valor escalar que mide la complejidad lógica de un programa.}
+Pycodestyle es una herramienta para comprobar código fuente en el lenguaje Python contra las convenciones de estilo PEP8.
+
+\bigskip
+PEP8 es una guía de estilo de codificación para Python definida inicialmente por Guido van Rossum, creador del lenguaje Python y que está considerada como la estándar del lenguaje.
+
+\subsection{Rubocop}
+
+Es un analizar de código para el lenguaje Ruby que tiene opciones muy interesantes como el cálculo de la complejidad ciclomática y la auto-reparación de código fuente incorrecto.
+
+\subsection{Cpplint}
+
+Herramienta de código abierto desarrollada por Google, diseñada para garantizar que el código C y C++ se ajusta a las guías de estilo de codificación de la compañía.
+
+\subsection {HTML Tidy}
+
+Es una aplicación de consola que sirve para corregir código HTML no válido, detectar posibles errores de accesibilidad web y mejorar el diseño y el estilo de sangría del marcado resultante. Fue desarrollado en 2002 por el miembro del World Wide Web Consortium (W3C) Dave Raggett.
 
 \section {Herramientas de verificación de código}
 
-Las herramientas de verificación de código se utilizan para verificar que el código está bien escrito, pueden comprobar la sintaxis, el estilo o ambas cosas. Pasamos a enumerar las más comunes:
+Las herramientas de verificación de código se utilizan para ejecutar los test TDD o BDD en nuestro código fuente. En nuestros ejercicios vamos a utilizar las siguientes  :
 
 \subsection {Pytest}
 
 Pytest es un framework de test unitarios para el lenguaje de programación Python que facilita la creación de pruebas sencillas y escalables. Las pruebas son expresivas y legibles y no se requiere código adicional.
 
-\subsection {PEP8}
-
-PEP8 es una guía de estilo de codificación para Python definida por sus creadores y que está definida como el estilo estándar del lenguaje.
-
 \subsection {RSpec}
 
-RSpec es una herramienta para realizar test BDD que sirve para probar código escrito en el lenguaje de programación Ruby. Se utiliza ampliamente en aplicaciones de producción.
+RSpec es una herramienta para realizar test BDD que sirve para probar código escrito en el lenguaje de programación Ruby.
 
-\subsection {Tidy}
+\subsection{MinUnit}
 
-HTML Tidy es una aplicación de consola que sirve para corregir código HTML no válido, detectar posibles errores de accesibilidad web y mejorar el diseño y el estilo de sangría del marcado resultante. Fue desarrollado en 2002 por Dave Raggett, miembro del World Wide Web Consortium (W3C).
+MinUnit es un mini-framework para correr test unitarios en lenguaje C. Su código fuente se puede encontrar en \url{http://www.jera.com/techinfo/jtns/jtn002.html}. Es particularmente pequeño ya que consiste en un fichero de cabecera ``.h'' de tan solo 4 líneas de código.
 
 \section{Metodología de aprendizaje}
 
@@ -108,34 +122,18 @@ Algunas de las herramientas necesarias para nuestro sistema de corrección requi
 
 \subsection{Aprendiendo a usar Git}
 
-Como ya explicamos anteriormente Git es uno de los sistemas de control de versiones más utilizados en la actualidad. Es dificil encontrar hoy en día una empresa que se dedique a la programación de forma profesional que no la utilice. A pesar de ello no forma parte del currículo de los ciclos formativos de informática. De hecho, salvo contadas excepciones, tampoco se aprende su uso en los Grados en Ingeniería Informática. De ahí la ventaja de nuestro sistema, ya que vamos a aprovechar para enseñarles a utilizar una herramienta que van a usar de forma exhaustiva durante su futura carrera profesional.
+Como ya explicamos anteriormente Git es uno de los sistemas de control de versiones más utilizados en la actualidad. Es difícil encontrar hoy en día una empresa que se dedique a la programación de forma profesional que no la utilice. A pesar de ello no forma parte del currículo de los ciclos formativos de informática. De hecho, salvo contadas excepciones, tampoco se aprende su uso en los Grados en Ingeniería Informática. De ahí la ventaja de nuestro sistema, ya que vamos a aprovechar para enseñarles a utilizar una herramienta que van a usar de forma exhaustiva durante su futura carrera profesional.
 
 \bigskip
-Para aprender a utilizar Git nos vamos a basar en diversos manuales que enseñan a utilizarlo de una forma sencilla (\cite{popov_control_2012}) sin necesidad de tener conocimientos de programación.
+Para aprender a utilizar Git nos vamos a basar en diversos manuales que enseñan a utilizarlo de una forma sencilla (\cite{popov_control_2012}) sin necesidad de tener conocimientos de programación. Como ya indicamos en la propuesta pedagógica vamos a definir unos contenidos comunes que son los siguientes:
 
 \subsubsection{Introducción a Git}
 
-Un sistema de control de versiones es una herramienta que registra los cambios realizados sobre un conjunto de archivos a lo largo del tiempo, de modo que se pueden volver a un estado previo en cualquier momento. Aunque se usa de forma mayoritaria para código fuente  se pueden guardar versiones de cualquier tipo de archivo.
-
-\bigskip
-Las principales características de un sistema de control de versiones son revertir archivos a un estado previo, revertir el proyecto entero a un estado anterior, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que puede estar causando un problema así como saber quién introdujo un error y cuándo.
-
-\bigskip
-Un método de control de versiones usado por mucha gente es copiar los archivos a otro directorio (indicando la fecha y hora en que lo hicieron, si son avispados). Este enfoque es muy común porque es muy simple, pero también tremendamente propenso a errores. Es fácil olvidar en qué directorio te encuentras, y guardar accidentalmente en el archivo equivocado o sobrescribir archivos que no querías.
-
-\bigskip
-En cambio Git es un sistema de control de versiones distribuido, los clientes no sólo descargan la última instantánea de los archivos: replican completamente el repositorio. Así, si un servidor muere, y estos sistemas estaban colaborando a través de él, cualquiera de los repositorios de los clientes puede copiarse en el servidor para restaurarlo (figura \ref{fig:dvcs}).
-
-\begin{figure}[H]
-\centering
-\includegraphics{../images/dvcs}
-\caption{Diagrama de control de versiones distribuido}
-\label{fig:dvcs}
-\end{figure}
+En esta parte les explicaremos que es un sistema de control de versiones, que diferencias hay entre un sistema centralizado y uno distribuido. También les hablaremos de la motivación de por qué usarlos poniéndoles ejemplos de lo que seguramente ellos han utilizado hasta ahora que seguramente será duplicar los archivos en distintas carpetas. También les hablaremos un poco de la historia de Git.
 
 \subsubsection{Creando una cuenta en GitHub}
 
-Para crear una cuenta en GitHUb debemos acceder a su página web \url{https://github.com} y hacer clic en SignUp (figura \ref{fig:git1}).
+Aquí les indicaremos como crear su primera cuenta en GitHub, para ello deberán acceder a la página web \url{https://github.com} y hacer clic en SignUp (figura \ref{fig:git1}).
 
 \begin{figure}[H]
 \centering
@@ -155,6 +153,8 @@ Crear un repositorio en GitHub es muy intuitivo, solo tenemos que hacer clic en 
 \label{fig:git2}
 \end{figure}
 
+Para que los alumnos se familiaricen con el uso de GitHub editaremos el fichero \textcc{README.md} con el editor WYSIWYG\footnote{acrónimo de What You See Is What You Get (en español, "lo que ves es lo que obtienes").} integrado en la plataforma.
+
 \subsubsection{Comandos básicos de Git}
 
 Aquí podemos ver algunos de los comandos más habituales de Git, se puede encontrar la referencia completa en su documentación oficial en \url{https://git-scm.com/doc}.
@@ -169,6 +169,7 @@ Aquí podemos ver algunos de los comandos más habituales de Git, se puede encon
   \item \textbf{git pull}: Permite obtener el código desde un repositorio remoto
 \end{itemize}
 
+Para que los alumnos se familiaricen con el uso de estos comandos vamos a pedirle que hagan cambios en los archivos de la carpeta \textcc{homework_00_markdown} con su editor y hagan un \textit{commit} y un \textit{push} con el código fuente.
 
 \subsubsection{Creando nuestro primer Fork}
 
@@ -199,7 +200,6 @@ Para hacer un ``Pull request'' haremos clic en el botón ``New pull request'' y 
 \label{fig:git_pr}
 \end{figure}
 
-
 \subsubsection{Sistemas de integración continua (CI)}
 
 Un sistema de integración continua suele consistir en una plataforma que ejecuta una serie de pasos con cada ``Push'' que realizamos a nuestro sistema de control de versiones. A esta serie de pasos se le suele denominar ``pipeline'' y suele contener pasos habituales como pueden ser la compilación, la ejecución de validaciones sintácticas y estilísticas de código (\textit{linter}) y la ejecución de los diferentes test para comprobar que efectivamente el código funciona.
@@ -227,18 +227,22 @@ Una vez activado, con cada \texttt{git push} se ejecutará el ``pipeline'' defin
 
 \subsection{Introducción a la programación}
 
-Una vez los alumnos han aprendido los comandos básicos de Git y se han dado de alta en GitHub es hora de enseñarles los comandos básicos
+Una vez los alumnos han aprendido los comandos básicos de Git y se han dado de alta en GitHub es hora de enseñarles algunos conceptos básicos de programación.
 
 \subsubsection{Conceptos básicos de programación}
 
 Todos los lenguajes de programación comparten algunos elementos básicos que funcionan y se usan de forma diferente en cada lenguaje, pero que cumplen el mismo objetivo. Esos elementos son:
-Tipos de datos
-Variables
-Control de flujo
-Ciclos
-Estructuras de datos
-Funciones
 
+\begin{itemize}
+  \item Tipos de datos: Enteros, Decimales, Caracteres, Cadenas de texto, etc...
+  \item Variables: donde almacenar los datos.
+  \item Control de flujo: los ``if''
+  \item Bucles: los conocidos ``loops'', ``for'' y ``while''
+  \item Funciones
+  \item Entra y Salida: pintando en pantalla.
+\end{itemize}
+
+Hay que remarcar que estamos explicando los conceptos básicos de programación, por eso esto no incluye ni estructuras de datos, ni orientación a objetos ni recursividad, realmente eso lo aprenderán en ejercicios adicionales.
 
 \subsubsection{Nuestro primer ``Hola Mundo''}
 
@@ -248,25 +252,29 @@ Un ``Hola mundo'' es un programa cuya única finalidad es escribir la frase ``Ho
 En nuestra metodología animamos a los profesores a enseñar un primer ejemplo del lenguaje a impartir usando un ``Hola Mundo'' para que los alumnos se familiaricen con el lenguaje. En nuestros ejercicios de ejemplo vamos a incorporar el hola mundo como primer ejercicio de programación.
 
 \subsubsection{Guías de estilo}
+
+En esta sección les enseñaremos la guía de estilo que vamos a seguir. Aunque es algo que se suele obviar en cursos de programación, a la hora de escribir código de calidad es importante seguir una guía de estilo, además de crear buenas prácticas de programación. Les explicaremos lo importante que es comentar correctamente y se utilizará a poder ser una guía de estilo estandarizada para el lenguaje que vayamos a impartir.
+
+\bigskip
+Si el lenguaje que vamos a impartir no tuviera guía de estilo estandarizada, o si el profesor lo estima didáctico se podría consensuar con los alumnos el tipo de estilo que se va a seguir. Este caso es aplicable al uso de comillas simples '' o dobles "" pues no hay un consenso sobre cuales se deben usar, igual pasa con la indentación con espacios o con tabuladores.
+
 \subsubsection{Introducción al TDD}
-\subsubsection{Algunos ejercicios en diferentes lenguajes}
 
-En el repositorio \url{https://github.com/erseco/ugr_tfm_maes_sample_exercises} hemos definido una serie de ejercicios así como sus correcciones, pasamos a detallar los mismos.
+Aquí les explicaremos en consiste el TDD, que como ya hemos visto es escribir la prueba, escribir el código y una vez funcione refactorizar. En nuestro caso concreto les vamos a dar nosotros realizadas las pruebas TDD, pero les podremos animar a que realicen pruebas adicionales.
 
+\subsubsection{Ejercicios de ejemplo}
 
-Escribe una función que encuentre el enésimo número primo. Para simplificar, asumimos que la entrada siempre será un entero (int). Si la entrada es menor o igual a 0, la función debe devolver -1.
-
-pasos a seguir para crear un ejercicio
-
-tiempos de creación de ejecución por el alumno
-
-Dichos ejercicios se han incorporado en la sección de Anexos
-
+En el repositorio \url{https://github.com/erseco/ugr_tfm_maes_sample_exercises} hemos definido una serie de ejercicios así como sus correcciones, dichos ejercicios se han incorporado en la sección de Anexos.
 
 \subsection{Usando la integración continua para aprender}
 
-Una vez hemos visto como usar Git y los conceptos básicos de programación vamos a ver algunos de los errores con los que se pueden encontrar los alumnos, como pueden usar el sistema de integración continua para detectarlos ellos mismos y como corregirlos.
+Una vez hemos visto como usar Git y los conceptos básicos de programación vamos a ver algunos de los errores con los que se pueden encontrar los alumnos, como pueden usar el sistema de integración continua para detectarlos ellos mismos y como corregirlos (figura \ref{fig:linter_error_python}).
 
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/linter_error_python}
+\caption{Detalle de un error de linter python en un pipeline}
+\label{fig:linter_error_python}
+\end{figure}
 
 

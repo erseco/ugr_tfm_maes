@@ -211,11 +211,13 @@ Incorporamos a la encuesta un apartado para que los profesores aportaran sus sug
 Tras validar que nuestra propuesta efectivamente tiene un alto valor pedagógico y que encaja dentro de los contenidos de varias asignaturas de los currículos de educación secundaria pasamos a definir los objetivos, contenidos y competencias de nuestra metodología.
 
 \bigskip
-El objetivo de nuestra metodología es enseñar programación de una forma diferente, con ejercicios, autocorrección y con tecnologías que se usan en el día a día de cualquier informático que se dedique profesionalmente a ello. La misma nos brinda muchas ventajas como puede ser ver un histórico de los envíos de un alumno, para saber donde falla o el tiempo que le ha dedicado a un ejercicio concreto, un simple vistazo al ``Travis'' de cada alumno nos da mucha información, y el poder seguir la traza es muy útil, también podemos ver el historial de ``commits'' de Git de forma rápida para ver la evolución del alumno. El código de colores de Travis CI también hace que corregir sea intuitivo, verde para correcto y rojo para incorrecto. En un momento dado podríamos detectar un posible plagio entre alumnos de forma rápida usando el mencionado historial.
+El objetivo de nuestra metodología es enseñar programación de una forma diferente, con ejercicios, autocorrección y con tecnologías que se usan en el día a día de cualquier informático que se dedique profesionalmente a ello. La misma nos brinda muchas ventajas como puede ser ver un histórico de los envíos de un alumno, para saber donde falla o el tiempo que le ha dedicado a un ejercicio concreto, un simple vistazo al ``Travis CI'' de cada alumno nos da mucha información, y el poder seguir la traza es muy útil, también podemos ver el historial de \textit{commits} de \textit{Git} de forma rápida para ver la evolución del alumno. El código de colores de \textit{Travis CI} también hace que corregir sea intuitivo, verde para correcto y rojo para incorrecto. En un momento dado podríamos detectar un posible plagio entre alumnos de forma rápida usando el mencionado historial.
 
 \bigskip
-Como indica el Decreto 110/2016  de 14 de junio el alumno debe ``conocer el funcionamiento de las nuevas tecnologías de la información y la comunicación, comprendiendo sus fundamentos y utilizándolas para el tratamiento de la información (buscar, almacenar, organizar, manipular, recuperar, presentar, publicar y compartir), así como para la elaboración de programas que resuelvan problemas tecnológicos'' así que además de todo lo indicado anteriormente estamos ajustándonos a la normativa.
+Como indica el Decreto 110/2016  de 14 de junio el alumno debe ``conocer el funcionamiento de las nuevas tecnologías de la información y la comunicación, comprendiendo sus fundamentos y utilizándolas para el tratamiento de la información (buscar, almacenar, organizar, manipular, recuperar, presentar, publicar y compartir), así como para la elaboración de programas que resuelvan problemas tecnológicos'' (\cite{junta_de_andalucia_decreto_2016}), así que además de todo lo indicado anteriormente estamos ajustándonos a la normativa.
 
+\bigskip
+El decreto anteriormente citado dice que ``la oferta curricular diseñada en este Decreto potencia el desarrollo de las tecnologías de la información y la comunicación, así como la enseñanza de las lenguas extranjeras, teniendo en cuenta los objetivos emanados de la Unión Europea en esta materia y los planes estratégicos de la Comunidad Autónoma de Andalucía para el desarrollo de las lenguas'' por lo que todos los ejercicios propuestos han sido realizados en inglés ya que es el idioma predominante en la informática y nuestros alumnos deberán adquirir competencias de lectura y comprensión en lengua inglesa para poder aprender por si mismos, de hecho el comando \textit{Git} y las páginas \textit{GitHub}, \textit{Travis CI} están completamente en inglés así como la mayor parte de la documentación de lenguajes de programación. Sin ir mas lejos la propia programación informática define sus directivas en inglés, con palabras como ``function'', ``class'' ``for'', ``if'', ``then'' o ``while''.
 
 \subsection{Contenidos}
 
@@ -227,7 +229,7 @@ Los contenidos de nuestra metodología comprenderán dos partes. Una parte comú
 La parte común comprenderá los siguientes dos apartados que se definirán de modo mas extenso en la propuesta metodológica:
 
 \begin{itemize}
-    \item Aprendiendo a usar Git: Comandos básicos, creación de una cuenta en GitHub, integración continua, realizar un fork del repositorio de ejercicios ...
+    \item Aprendiendo a usar Git: Comandos básicos, creación de una cuenta en GitHub, integración continua, realizar un \textit{fork} del repositorio de ejercicios ...
     \item Introducción a la programación: Conceptos comunes a todos los lenguajes como ``variable'' y ``constante'', condicionales y bucles,...
 \end{itemize}
 
@@ -237,7 +239,7 @@ Esta parte común podrá resumirse o incluso obviarse si los alumnos ya conocen 
 La parte específica se desarrollará en base a los contenidos de la asignatura a impartir, pero en la propuesta metodológica se definirán algunos ejercicios de ejemplo de diferentes asignaturas como pueden ser ``Lenguajes de marcas y sistemas de gestión de información'', ``Programación'' o ``Bases de Datos''.
 
 \bigskip
-Los ejercicios de la parte específica estarán siempre disponibles en su totalidad para que los alumnos puedan ir avanzando al ritmo que deseen. Cada ejercicio tendrá una breve explicación de lo que se requiere y una serie de test TDD que deberán pasar. Para la entrega de ejercicios el alumno deberá realizar un ``Pull request'' contra el repositorio del profesor lo cual dará el ejercicio por entregado.
+Los ejercicios de la parte específica estarán siempre disponibles en su totalidad para que los alumnos puedan ir avanzando al ritmo que deseen. Cada ejercicio tendrá una breve explicación de lo que se requiere y una serie de test TDD que deberán pasar. El profesor también podrá poner ejercicios resueltos pero con algunos errores para que los alumnos los corrijan.
 
 \subsection{Competencias}
 
@@ -263,9 +265,54 @@ Entrando en detalle, de nuestra metodología, podemos destacar y definir las sig
 
 \end{itemize}
 
+\subsection{Proceso de entrega}
+Para la entrega de ejercicios el alumno deberá realizar un ``Pull request'' contra el repositorio del profesor lo cual dará el ejercicio por entregado. El repositorio tiene una plantilla para la creación de dichos \textit{pull requests} en la que al alumno comprobará un checklist indicando que ha leído el guión de la práctica, cumple los posible pre-requisitos (por ejemplo haber terminado un ejercicio previo) así como indicar que el código entregado es original y no ha tratado de hacer modificaciones en el TDD ni en el \textit{pipeline} (figura \ref{fig:github_pr_create}).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/github_pr_create}
+\caption{Plantilla de creación de Pull Request}
+\label{fig:github_pr_create}
+\end{figure}
+
+Al crear el \textit{pull request} el alumno deberá verificar que no hay conflictos con el código base, si los hubiera deberá corregirlos manualmente. Tras esto se lanzarán los \textit{pipelines} del repositorio del alumno (se activan en cada envío) y el del repositorio del profesor, que se activa al crear el \textit{pull request} (figura \ref{fig:github_pr_view}) y al hacer cualquier envío adicional a la rama asociada al \textit{pull request}. Tras terminar el proceso de ejecución del \textit{pipeline} veremos si este ha dado un error (figura \ref{fig:travis_pipeline_failed}) o ha terminado de forma satisfactoria (figura \ref{fig:travis_pipeline_passed}) siendo esta última la imprescindible para proceder a corregir el ejercicio.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/github_pr_view}
+\caption{Vista de un Pull Request creado con el pipeline en ejecución}
+\label{fig:github_pr_view}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/travis_pipeline_failed}
+\caption{Detalle de un pipeline fallido}
+\label{fig:travis_pipeline_failed}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/travis_pipeline_passed}
+\caption{Detalle de un pipeline satisfactorio}
+\label{fig:travis_pipeline_passed}
+\end{figure}
+
 \section{Evaluación}
 
 Para la evaluación de los ejercicios nos basaremos en primer lugar en si han seguido los pasos indicados de forma correcta, realizando un ``Pull request'' e indicando lo realizado, luego comprobaremos si los ``pipelines'' han pasado de forma correcta y de forma adicional podemos entrar a valorar, como hemos mencionado anteriormente, el histórico de envíos a GitHub para ver si ha ido solucionando los problemas de forma adecuada y también valorando el tiempo dedicado. Esto no quiere decir que a mas tiempo mayor calificación, pero si que sirve para hacernos una idea del esfuerzo que ha invertido el alumno para solucionar los ejercicios. Esto no quiere decir que también se pueda realizar una corrección ``manual'' de los ejercicios si fuera necesario.
+
+\bigskip
+Una utilidad muy útil de nuestro sistema es que podemos ver los cambios de forma visual con la pagina de diferencias, o \textit{diff} (figura \ref{fig:github_pr_diff}) lo que nos permite centrarnos en los cambios que ha realizado el alumno, además de detectar cualquier posible intento de modificación del código del \textit{pipeline} o de los tests de verificación, con esto nos podemos asegurar en la evaluación de que todo lo entregado por el alumno está realizado conforme al guión entregado.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\textwidth]{../images/github_pr_diff}
+\caption{Detalle de los cambios de código en un Pull Request}
+\label{fig:github_pr_diff}
+\end{figure}
+
+
 
 % Falta mucho aquí acerca de la forma de trabajar: cómo plantear los ejercicios, cómo hacerlos con distintos objetivos y niveles, cómo se puede plantear la evaluación y calificación.... todo eso es parte de tu propuesta que puede ser un poco "independiente" de la propuesta tecnológica
 
