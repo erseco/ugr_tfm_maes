@@ -64,6 +64,8 @@ Aprovechamos la encuesta para obtener también algunos datos interesantes sobre 
 \bigskip
 La encuesta estuvo activa desde el 19 hasta el 25 de Mayo de 2019 y se recopilaron un total de 47 respuestas. Es una población pequeña pero aun así es interesante por las características de la misma ya que la encuesta se compartió ``de boca a oreja'' indicando que sólo lo compartieran con otros profesores a ser posible relacionados con la informática para no desvirtuar las respuestas.
 
+\bigskip
+Por supuesto los resultado de la encuesta son orientativos y no tienen un fundamento estadístico debido a los medios y el tiempo con que se contaba, pero que nos ha servidor para tener una impresión general.
 
 \begin{enumerate}
 
@@ -146,7 +148,7 @@ Esta pregunta está íntimamente relacionada con el propósito de este trabajo, 
     \item Sí o se corrigen en clase.
 \end{itemize}
 
-Nos pareció interesante la opción de la corrección en clase, pues no la habíamos tenido en cuenta, pensamos que es una forma muy didáctica de que el alumno vea dónde ha fallado y hacer una corrección temprana, pero teniendo en cuenta que por norma general siempre hay una sensación de falta de tiempo para impartir el temario, así que quizá invertir tiempo en esta corrección puede hacer que lo perdamos para impartir nuevos contenidos.
+Nos pareció interesante la opción de la corrección en clase, pues no la habíamos tenido en cuenta, pensamos que es una forma muy didáctica de que el alumno vea dónde ha fallado y hacer una corrección temprana, pero teniendo en cuenta que por norma general siempre hay una sensación de falta de tiempo para impartir el temario, así que quizá invertir tiempo en esta corrección puede hacer que lo perdamos para impartir nuevos contenidos. Esto no quiere decir que se siga invirtiendo tiempo en realizar ejercicios en clase, q
 
 \begin{figure}[H]
 \centering
@@ -177,7 +179,7 @@ La opción ``Mejoran la enseñanza al poder ver de manera más inmediata los res
     \item Son útiles en su justa medida.
 \end{itemize}
 
-En estas respuestas vemos que en su mayoría también coinciden que los sistemas de corrección automática son muy útiles para mejorar la enseñanza, así que creemos que esta propuesta metodológica puede ser de gran ayuda a profesores.
+En las respuestas vemos que en su mayoría también coinciden que los sistemas de corrección automática son muy útiles para mejorar la enseñanza, así que creemos que nuestra propuesta puede ser de gran ayuda a profesores.
 
 \begin{figure}[H]
 \centering
@@ -226,7 +228,7 @@ Los contenidos de nuestra metodología comprenderán dos partes. Una parte comú
 % Eso de que la introducción a la programación se pueda poner o quitar es muy relativo, explícalo mejor
 
 \bigskip
-La parte común comprenderá los siguientes dos apartados que se definirán de modo más extenso en la propuesta metodológica:
+La parte común comprenderá los siguientes dos apartados que se definirán de modo más extenso en la propuesta técnica:
 
 \begin{itemize}
     \item Aprendiendo a usar Git: Comandos básicos, creación de una cuenta en GitHub, integración continua, realizar un \textit{fork} del repositorio de ejercicios ...
@@ -236,7 +238,7 @@ La parte común comprenderá los siguientes dos apartados que se definirán de m
 Esta parte común podrá resumirse o incluso obviarse si los alumnos ya conocen alguno de los dos conceptos básicos por haberlos aprendido en otra asignatura.
 
 \bigskip
-La parte específica se desarrollará en base a los contenidos de la asignatura a impartir, pero en la propuesta metodológica se definirán algunos ejercicios de ejemplo de diferentes asignaturas como pueden ser ``Lenguajes de marcas y sistemas de gestión de información'', ``Programación'' o ``Bases de Datos''.
+La parte específica se desarrollará en base a los contenidos de la asignatura a impartir, pero en la propuesta técnica se definirán algunos ejercicios de ejemplo de diferentes asignaturas como pueden ser ``Lenguajes de marcas y sistemas de gestión de información'', ``Programación'' o ``Bases de Datos''.
 
 \bigskip
 Los ejercicios de la parte específica estarán siempre disponibles en su totalidad para que los alumnos puedan ir avanzando al ritmo que deseen. Cada ejercicio tendrá una breve explicación de lo que se requiere y una serie de test TDD que deberán pasar. El profesor también podrá poner ejercicios resueltos pero con algunos errores para que los alumnos los corrijan.
@@ -268,6 +270,8 @@ Entrando en detalle, de nuestra metodología, podemos destacar y definir las sig
 \subsection{Proceso de entrega}
 Para la entrega de ejercicios el alumno deberá realizar un ``Pull request'' contra el repositorio del profesor lo cual dará el ejercicio por entregado. El repositorio tiene una plantilla para la creación de dichos \textit{pull requests} en la que al alumno comprobará un checklist indicando que ha leído el guión de la práctica, cumple los posible pre-requisitos (por ejemplo haber terminado un ejercicio previo) así como indicar que el código entregado es original y no ha tratado de hacer modificaciones en el TDD ni en el \textit{pipeline} (figura \ref{fig:github_pr_create}).
 
+% ¿Puedes hacer un esquema? como un pequeño diagrama de flujo donde se vean los pasos... esto te ayudará también para la presentación :)
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\textwidth]{../images/github_pr_create}
@@ -275,7 +279,7 @@ Para la entrega de ejercicios el alumno deberá realizar un ``Pull request'' con
 \label{fig:github_pr_create}
 \end{figure}
 
-Al crear el \textit{pull request} el alumno deberá verificar que no hay conflictos con el código base, si los hubiera deberá corregirlos manualmente. Tras esto se lanzarán los \textit{pipelines} del repositorio del alumno (se activan en cada envío) y el del repositorio del profesor, que se activa al crear el \textit{pull request} (figura \ref{fig:github_pr_view}) y al hacer cualquier envío adicional a la rama asociada al \textit{pull request}. Tras terminar el proceso de ejecución del \textit{pipeline} veremos si este ha dado un error (figura \ref{fig:travis_pipeline_failed}) o ha terminado de forma satisfactoria (figura \ref{fig:travis_pipeline_passed}) siendo esta última la imprescindible para proceder a corregir el ejercicio.
+Al crear el \textit{pull request} el alumno deberá verificar que no hay conflictos con el código base, si los hubiera deberá corregirlos manualmente. Tras esto se lanzarán los \textit{pipelines} del repositorio del alumno (se activan en cada envío) y el del repositorio del profesor, que se activa al crear el \textit{pull request} (figura \ref{fig:github_pr_view}) y al hacer cualquier envío adicional a la rama asociada al \textit{pull request}. Tras terminar el proceso de ejecución del \textit{pipeline} veremos si este ha dado un error (figura \ref{fig:travis_pipeline_failed}) o ha terminado de forma satisfactoria (figura \ref{fig:travis_pipeline_passed}) siendo esta última la imprescindible para proceder a corregir el ejercicio (figura \ref{fig:flowchart}).
 
 \begin{figure}[h!]
 \centering
@@ -298,12 +302,20 @@ Al crear el \textit{pull request} el alumno deberá verificar que no hay conflic
 \label{fig:travis_pipeline_passed}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{../images/flowchart}
+\caption{Diagrama de flujo de entrega de un ejercicio}
+\label{fig:flowchart}
+\end{figure}
+
+
 \section{Evaluación}
 
 Para la evaluación de los ejercicios nos basaremos en primer lugar en si han seguido los pasos indicados de forma correcta, realizando un ``Pull request'' e indicando lo realizado, luego comprobaremos si los ``pipelines'' han pasado de forma correcta y de forma adicional podemos entrar a valorar, como hemos mencionado anteriormente, el histórico de envíos a GitHub para ver si ha ido solucionando los problemas de forma adecuada y también valorando el tiempo dedicado. Esto no quiere decir que a más tiempo mayor calificación, pero si que sirve para hacernos una idea del esfuerzo que ha invertido el alumno para solucionar los ejercicios. Esto no quiere decir que también se pueda realizar una corrección ``manual'' de los ejercicios si fuera necesario.
 
 \bigskip
-Una utilidad muy útil de nuestro sistema es que podemos ver los cambios de forma visual con la pagina de diferencias, o \textit{diff} (figura \ref{fig:github_pr_diff}) lo que nos permite centrarnos en los cambios que ha realizado el alumno, además de detectar cualquier posible intento de modificación del código del \textit{pipeline} o de los tests de verificación, con esto nos podemos asegurar en la evaluación de que todo lo entregado por el alumno está realizado conforme al guión entregado.
+Una característica muy útil de nuestro sistema es que podemos ver los cambios de forma visual con la pagina de diferencias, o \textit{diff} (figura \ref{fig:github_pr_diff}) lo que nos permite centrarnos en los cambios que ha realizado el alumno, además de detectar cualquier posible intento de modificación del código del \textit{pipeline} o de los tests de verificación, con esto nos podemos asegurar en la evaluación de que todo lo entregado por el alumno está realizado conforme al guión entregado.
 
 \begin{figure}[h!]
 \centering
