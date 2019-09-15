@@ -14,8 +14,8 @@ Mediante el uso de sistemas de integración continua desarrollaremos un sistema 
 
 ## Contenido
 
-- Memoria: [thesis](../blob/master/doc/)
-- Presentación: [https://gitpitch.com/erseco/ugr_tfm_maes](https://gitpitch.com/erseco/ugr_tfm_maes?t=night)
+- Memoria: [pdf](../../releases/download/0.0.2/project.pdf)
+- Presentación: [pdf](../../releases/download/0.0.2/slides.pdf)
 - Ejercicios de ejemplo: [ugr_tfm_maes_sample_exercises](https://github.com/erseco/ugr_tfm_maes_sample_exercises)
 
 ### Autor: Ernesto Serrano Collado
